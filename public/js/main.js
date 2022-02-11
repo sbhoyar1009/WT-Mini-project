@@ -172,6 +172,18 @@ $(window).load(function(){
 
 });
 
+
+var printVal=function(){
+	var name  = $("#name").val();
+	var email = $("#email").val();
+	var phone = $("#phone").val();
+	var country  = $("#country").val();
+	var city  = $("#city").val();
+	var password  = $("#password").val();
+
+	console.log(name,email,phone,country,city,password);
+}
+
 	// CONTACT FORM FUNCTION
 	var contact_send = function(){
 
@@ -213,6 +225,7 @@ $(window).load(function(){
 			body: JSON.stringify(formData),
 			headers: { "Content-Type": "application/json" },
 		  });
+		  
 		  const data =  res.json();
 	}
 
