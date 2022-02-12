@@ -1,59 +1,95 @@
 <div class="container">
-	<div class="row">
-        <div id="register-form" class="col-lg-6 col-lg-offset-3">
-            <div class="row">
-            	<button title="Close (Esc)" type="button" class="mfp-close">×</button>
-                
-                <div class="col-lg-12">
-                	<h2 class="uppercase">register</h2>
-                    <!-- <p>Maecenas vitae tincidunt nibh. Praesent tristique lacus quis ante venenatis posuere. Aenean adipiscing dictum mollis. Suspendisse potenti. Proin pretium lectus ut leo fringilla mattis. Mauris ultrices rutrum sagittis. Pellentesque vitae nibh elit. Fusce lacinia, elit non iaculis fermentum, metus justo posuere neque, sed viverra ligula turpis sit amet quam. Integer ac risus libero. Curabitur sit amet sem leo</p> -->
-                </div>
-                <!-- REGISTER FORM -->
-                <form id="registration" action="/register" method="post">
-                <div class="register-form col-lg-12">
-                    <div class="control-group">
-                        <div class="controls">
-                            <label for="name">NAME</label><br>
-                            <input type="text" name="user[name]" id="name" required data-validation-required-message="Please enter your name" onchange="" />
-                        </div>
-                    </div>
-                
-                    <div class="control-group">
-                        <div class="controls ">                           
-                            <label for="email">EMAIL</label><br>
-                            <input type="email" name="user[email]" id="email"  required data-validation-required-message="Please enter your email" />
-                        </div>
-                    </div>
-                
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="phone">PHONE</label><br>
-                            <input type="text" name="user[phone]" id="phone" required data-validation-required-message="Please enter your phone" />
-                        </div>
-                    </div>
+  <div class="row">
+    <div id="register-form" class="col-lg-6 col-lg-offset-3">
+      <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close">×</button>
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="country">COUNTRY</label><br>
-                            <input type="text" name="user[country]" id="country" required data-validation-required-message="Please enter your country" />
-                        </div>
-                    </div>
+        <div class="col-lg-12">
+          <h2 class="uppercase">register</h2>
+          <!-- <p>Maecenas vitae tincidunt nibh. Praesent tristique lacus quis ante venenatis posuere. Aenean adipiscing dictum mollis. Suspendisse potenti. Proin pretium lectus ut leo fringilla mattis. Mauris ultrices rutrum sagittis. Pellentesque vitae nibh elit. Fusce lacinia, elit non iaculis fermentum, metus justo posuere neque, sed viverra ligula turpis sit amet quam. Integer ac risus libero. Curabitur sit amet sem leo</p> -->
+        </div>
+        <!-- REGISTER FORM -->
+        <form id="registration">
+          <div class="register-form col-lg-12">
+            <div class="control-group">
+              <div class="controls">
+                <label for="name">NAME</label><br />
+                <input
+                  type="text"
+                  name="user[name]"
+                  id="name"
+                  required
+                  data-validation-required-message="Please enter your name"
+                />
+              </div>
+            </div>
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="city">CITY</label><br>
-                            <input type="text" name="user[city]" id="city" required data-validation-required-message="Please enter your city" />
-                        </div>
-                    </div>
+            <div class="control-group">
+              <div class="controls">
+                <label for="email">EMAIL</label><br />
+                <input
+                  type="email"
+                  name="user[email]"
+                  id="email"
+                  required
+                  data-validation-required-message="Please enter your email"
+                />
+              </div>
+            </div>
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="password">PASSWORD</label><br>
-                            <input type="text" name="user[password]" id="password" required data-validation-required-message="Please enter your password" />
-                        </div>
-                    </div>
-                    
-                     <!-- <div class="control-group">
+            <div class="control-group">
+              <div class="controls">
+                <label for="phone">PHONE</label><br />
+                <input
+                  type="text"
+                  name="user[phone]"
+                  id="phone"
+                  required
+                  data-validation-required-message="Please enter your phone"
+                />
+              </div>
+            </div>
+
+            <div class="control-group col-lg-6">
+              <div class="controls">
+                <label for="country">COUNTRY</label><br />
+                <input
+                  type="text"
+                  name="user[country]"
+                  id="country"
+                  required
+                  data-validation-required-message="Please enter your country"
+                />
+              </div>
+            </div>
+
+            <div class="control-group col-lg-6">
+              <div class="controls">
+                <label for="city">CITY</label><br />
+                <input
+                  type="text"
+                  name="user[city]"
+                  id="city"
+                  required
+                  data-validation-required-message="Please enter your city"
+                />
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label for="password">PASSWORD</label><br />
+                <input
+                  type="text"
+                  name="user[password]"
+                  id="password"
+                  required
+                  data-validation-required-message="Please enter your password"
+                />
+              </div>
+            </div>
+
+            <!-- <div class="control-group">
                         <div class="controls ">                            
                             <label for="type">TYPE</label><br>
                             <select name="type" id="type">
@@ -64,14 +100,20 @@
                                 </select>
                         </div>
                     </div> -->
-                
-                    <div class="col-lg-12 text-right">
-                        <button class="button button-big button-dark" type="submit">SUBMIT</button>
-                        <!-- <button class="button button-big button-dark" onclick="contact_send();">SUBMIT</button> -->
-                    </div>
-                </div>
-            </form>
+
+            <div class="col-lg-12 text-right">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="button button-big button-dark"
+              >
+                SUBMIT
+              </button>
+              <!-- <button class="button button-big button-dark" onclick="contact_send();">SUBMIT</button> -->
             </div>
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,4 +1,3 @@
-
 /* EVENTIAL CSS 
 
 	1. CORE CSS
@@ -22,278 +21,280 @@
 		- Preload	
 */
 
-
 /* CORE CSS */
 
 body {
-	color:#2e2e2e;
+  color: #f7f7f7;
+  background: #212121;
 }
-
 
 /* NAVIGATION */
 
 .navbar-custom {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 .navbar-custom a {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
-	color:#008177;
+  color: #008177;
+  color: #68a000;
 }
 
 .navbar-custom .navbar-toggle {
-	background:#ffffff;
+  background: #ffffff;
 }
 
 .top-nav-collapse {
-	background-color: #00a99d;
+  background-color: #8fdb00;
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-	background:#00a99d;
+  background: #8fdb00;
 }
-
 
 /* TOP */
 
 #top {
-	color:#ffffff;
+  color: #ffffff;
 }
-
 
 /* Countdown */
 
 #countdown {
-	color:#ffffff;
+  color: #ffffff;
 }
-
 
 /* OVERVIEW */
 
 #overview h3 {
-	color:#999999;
+  color: #fff;
 }
 
 #overview h3 span {
-	color:#2e2e2e;
-
+  color: #f7f7f7;
 }
 
 #overview h4 {
-	margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 #overview i {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 #overview .lead {
-	color:#999999;
+  color: #fff;
 }
 
 #overview .fa-circle {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
-
 
 /* SPEAKER */
 
 #speakers {
-	background:#efefef;
+  background: #efefef;
 }
 
 .speaker figcaption {
-	background: rgba(0, 169, 157, 0.85);
-	color: #ffffff;
+  background: #8edb00d3;
+  color: #8edb00d3;
+  color: #ffffff;
 }
- 
+
 .speaker figcaption h4 {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 .speaker figcaption p {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 .speaker a,
 .speaker .social a {
-	color:rgba(255, 255, 255, .75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .speaker a:hover,
-.speaker .social a:hover{
-	color:rgba(255, 255, 255, 1);
+.speaker .social a:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .speaker .title {
-	color:#888888;
+  color: #888888;
 }
-
 
 /* speaker detail popup */
 
 #speaker-detail {
-	color:#2e2e2e;
-	background:#ffffff;
+  color: #f7f7f7;
+  background: #ffffff;
+  background: linear-gradient(90deg, #1d3a49 0.01%, #1b3745 89.97%);
 }
 
 #speaker-detail h3 {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 #speaker-detail a {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 #speaker-detail i {
-	color:#888888;
+  color: #888888;
 }
 
-
 /* SCHEDULE */
+#schedule,
+#speakers,
+#faq-gallery {
+  color: #212121;
+}
 
 .event h3 {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 .event .icon {
-	color:#ffffff;
-	background:#00a99d;
+  color: #ffffff;
+  background: #8fdb00;
+  color: #8fdb00;
 }
 
 .event .description {
-	background:#efefef;
-
+  background: #efefef;
 }
-
 
 /* Schedule Pagination */
 
 #days .item {
-	background:#efefef;
+  background: #efefef;
 }
 
 #days .item:hover,
 #days .item:active {
-	color:#ffffff;
-	background:#00a99d;
+  color: #ffffff;
+  background: #8fdb00;
+  color: #8fdb00;
 }
 
 /* VENUE */
 
 .venue-address {
-	color:#ffffff;
-	background:rgba(0, 169, 157, 0.85);
+  color: #ffffff;
+  background: #8edb00d3;
 }
 
 #venue h3 {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 #venue .venue-address h2 {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 #venue i {
-	color:#00a99d;
+  color: #8fdb00;
+  color: #8fdb00;
 }
 
 #venue .fa-inverse {
-	color:#ffffff;
+  color: #ffffff;
 }
-
 
 /* TESTIMONIAL */
 
 #testimonial {
-	color:#ffffff;
+  color: #ffffff;
 }
-
 
 /* SPONSOR */
 
 #sponsors h3 {
-	color:#999999;
+  color: #fff;
 }
-
 
 /* SUBSCRIBE */
 
 #subscribe {
-	color:#ffffff;
+  color: #ffffff;
 }
 
 #subscribe input {
-	color:#ffffff;
-	background:rgba(255,255,255, 0.30);
-	border:1px solid #ffffff;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ffffff;
 }
 
 /* FAQ - GALLERY */
 
 #faq-gallery {
-	background:#ececec;
+  background: #ececec;
 }
 
 #faq i {
-	color:#00a99d;
+  color: #8fdb00;
 }
 
 /* REGISTER */
 
 #register {
-	color:#ffffff;
-	/*background:#efefef;*/
+  color: #ffffff;
+  /*background:#efefef;*/
 }
 
 .price-table-header {
-	color:#ffffff;
-	background:#00a99d;
+  color: #ffffff;
+  background: #8fdb00;
 }
 
 .price-table-description {
-	background:#ffffff;
+  background: #ffffff;
 }
 
 .description-item {
-	color:#2e2e2e;
+  color: #f7f7f7;
 }
 
 .price-table-description .stripe {
-	color:#ffffff;
-	background:#00a99d;
+  color: #ffffff;
+  background: #8fdb00;
 }
-
 
 /* register form */
 
 #register-form {
-	background:#ffffff;
+  background: #ffffff;
+  color: #212121;
 }
-
 
 /* CONTACT */
 
 .contact {
-	color:#ffffff;
-	background:rgba(0, 169, 157, 0.85);
+  color: #ffffff;
+  background: #8edb00d3;
 }
 
 .social .fa-inverse {
-	color:#00a99d;
+  color: #8fdb00;
 }
 
 .social a {
-	color:rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.social a:hover{
-	color:rgba(255, 255, 255, 1);
+.social a:hover {
+  color: rgba(255, 255, 255, 1);
 }
-
 
 /* MISC */
 
@@ -302,72 +303,70 @@ body {
 input[type="text"],
 input[type="email"],
 select {
-	color:#2e2e2e;
-} 
+  color: #f7f7f7;
+}
 
 ::-webkit-input-placeholder {
-   color: #2e2e2e;
+  color: #f7f7f7;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: #2e2e2e;  
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #f7f7f7;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #2e2e2e;  
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #f7f7f7;
 }
 
-:-ms-input-placeholder {  
-   color: #2e2e2e;  
+:-ms-input-placeholder {
+  color: #f7f7f7;
 }
-
 
 /* BUTTONS */
 
 .button {
-	color: inherit;
-	background: none;
+  color: inherit;
+  background: none;
 }
 
-
 .button-light {
-	border: 1px solid #ffffff;
-	color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 
 .button-light:hover,
 .button-light:active {
-	color: #00a99d;
-	background: #ffffff;
+  color: #8fdb00;
+  background: #ffffff;
 }
 
 .button-dark {
-	color: #ffffff;
-	background:#00a99d;
+  color: #ffffff;
+  background: #8fdb00;
 }
 
 .button-dark:hover,
 .button-dark:active {
-	color: #ffffff;
-	background: #008177;
+  color: #ffffff;
+  background: #008177;
 }
-
 
 /* PRELOAD */
 
 #preload {
-	background:#ececee;
+  background: #ececee;
 }
 
 .loader {
   border-top: 1.1em solid rgba(255, 255, 255, 0.2);
   border-right: 1.1em solid rgba(255, 255, 255, 0.2);
   border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid #00a99d;
+  border-left: 1.1em solid #8fdb00;
 }
-
 
 /* magnific popup */
 .mfp-bg {
-	background:#00a99d;
+  background: #8fdb00;
 }
