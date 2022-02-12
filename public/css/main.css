@@ -145,6 +145,14 @@ h4 {
 
 .navbar-brand {
   padding: 0 15px;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.navbar-brand img {
+  width: 200px;
+  height: auto;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
@@ -155,6 +163,10 @@ h4 {
 
 .top-nav-collapse {
   padding: 20px 0;
+}
+
+.top-nav-collapse .navbar-brand {
+  background: #212121;
 }
 
 /* TOP */
@@ -781,6 +793,11 @@ select {
 .button-dark:hover,
 .button-dark:active {
   text-decoration: none;
+}
+
+.social-reg {
+  padding: 2rem;
+  text-transform: uppercase;
 }
 
 /* PRELOAD */
