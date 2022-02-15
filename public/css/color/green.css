@@ -160,13 +160,11 @@ body {
 
 .event h3 {
   color: #8fdb00;
-  color: #8fdb00;
 }
 
 .event .icon {
   color: #ffffff;
   background: #8fdb00;
-  color: #8fdb00;
 }
 
 .event .description {
@@ -183,7 +181,6 @@ body {
 #days .item:active {
   color: #ffffff;
   background: #8fdb00;
-  color: #8fdb00;
 }
 
 /* VENUE */
@@ -351,6 +348,7 @@ select {
 .button-dark:active {
   color: #ffffff;
   background: #008177;
+  background: #74b300;
 }
 
 /* PRELOAD */
