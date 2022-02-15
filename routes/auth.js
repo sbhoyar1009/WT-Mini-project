@@ -65,4 +65,14 @@ router.get("/speaker-details", async (req, res) => {
   res.render("speaker-detail");
 });
 
+router.get('/users', async (req, res) => {
+  await User.find({}, (err, users) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send( users );
+    }
+  });
+})
+
 module.exports = router;
