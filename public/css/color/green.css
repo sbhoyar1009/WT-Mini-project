@@ -23,6 +23,11 @@
 
 /* CORE CSS */
 
+*::selection {
+  background: #8fdb00;
+  color: #000;
+}
+
 body {
   color: #f7f7f7;
   background: #212121;
