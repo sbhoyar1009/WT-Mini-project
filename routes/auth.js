@@ -7,6 +7,8 @@ const express = require("express"),
   //   middleware = require("../middleware"),
   passport = require("passport");
 
+const sendMail = require('../emails');
+
 dotenv.config();
 
 router.get("/register", function (req, res) {
@@ -40,6 +42,7 @@ router.post("/register", async (req, res) => {
         res.redirect("/");
       } else {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
+        sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
         res.redirect("/");
       }
@@ -61,18 +64,31 @@ router.get(
   (req, res) => {}
 );
 
+router.get(
+  "/auth/facebook",
+  passport.authenticate("facebook", { scope: "email" })
+);
+
+router.get(
+  "/auth/facebook/callback",
+  passport.authenticate("facebook", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
+
 router.get("/speaker-details", async (req, res) => {
   res.render("speaker-detail");
 });
 
-router.get('/users', async (req, res) => {
+router.get("/users", async (req, res) => {
   await User.find({}, (err, users) => {
     if (err) {
       console.log(err);
     } else {
-      res.send( users );
+      res.send(users);
     }
   });
-})
+});
 
 module.exports = router;
