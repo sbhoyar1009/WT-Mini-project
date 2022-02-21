@@ -11,14 +11,6 @@ const sendMail = require('../emails');
 
 dotenv.config();
 
-router.get("/register", function (req, res) {
-  res.render("register");
-});
-
-router.get("/post-registration", function (req, res) {
-  res.render("post-registration");
-});
-
 router.post("/register", async (req, res) => {
   let userData = req.body.user;
   // console.log(req.body.user);
@@ -42,12 +34,12 @@ router.post("/register", async (req, res) => {
         // req.flash("error", err.message);
 
         console.log(err);
-        res.redirect("/");
+        res.redirect("back");
       } else {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
         // sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
-        res.redirect("/post-registration");
+        res.redirect("/registration/successful");
       }
     });
   }
@@ -61,7 +53,7 @@ router.get(
 router.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/post-registration",
+    successRedirect: "/registration/successful",
     failureRedirect: "/register",
   }),
   (req, res) => {}
