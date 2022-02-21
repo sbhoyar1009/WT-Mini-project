@@ -1,0 +1,224 @@
+<div class="container">
+  <div class="row">
+    <div id="register-form" class="col-lg-6 col-lg-offset-3">
+      <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+
+        <div class="col-lg-12">
+          <h2 class="uppercase">register</h2>
+          <!-- <p>Maecenas vitae tincidunt nibh. Praesent tristique lacus quis ante venenatis posuere. Aenean adipiscing dictum mollis. Suspendisse potenti. Proin pretium lectus ut leo fringilla mattis. Mauris ultrices rutrum sagittis. Pellentesque vitae nibh elit. Fusce lacinia, elit non iaculis fermentum, metus justo posuere neque, sed viverra ligula turpis sit amet quam. Integer ac risus libero. Curabitur sit amet sem leo</p> -->
+        </div>
+        <!-- REGISTER FORM -->
+        <form id="registration" action="/register" method="POST">
+          <div class="register-form col-lg-12">
+            <div class="control-group">
+              <div class="controls">
+                <label for="name">NAME</label><br />
+                <input
+                  type="text"
+                  name="user[name]"
+                  id="name"
+                  required
+                  data-validation-required-message="Please enter your name"
+                />
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label for="email">EMAIL</label><br />
+                <input
+                  type="email"
+                  name="user[email]"
+                  id="email"
+                  required
+                  data-validation-required-message="Please enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label for="phone">PHONE</label><br />
+                <input
+                  type="text"
+                  name="user[phone]"
+                  id="phone"
+                  required
+                  data-validation-required-message="Please enter your phone"
+                />
+              </div>
+            </div>
+
+            <div class="control-group col-lg-6">
+              <div class="controls">
+                <label for="country">COUNTRY</label><br />
+                <input
+                  type="text"
+                  name="user[country]"
+                  id="country"
+                  required
+                  data-validation-required-message="Please enter your country"
+                />
+              </div>
+            </div>
+
+            <div class="control-group col-lg-6">
+              <div class="controls">
+                <label for="city">CITY</label><br />
+                <input
+                  type="text"
+                  name="user[city]"
+                  id="city"
+                  required
+                  data-validation-required-message="Please enter your city"
+                />
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <label for="password">PASSWORD</label><br />
+                <input
+                  type="text"
+                  name="user[password]"
+                  id="password"
+                  required
+                  data-validation-required-message="Please enter your password"
+                />
+              </div>
+            </div>
+
+            <!-- <div class="control-group">
+                        <div class="controls ">                            
+                            <label for="type">TYPE</label><br>
+                            <select name="type" id="type">
+                                    <option value="" disabled selected="selected">Select type</option>
+                                    <option value="Early Bird">Early Bird</option>
+                                    <option value="Standart">Standart</option>
+                                    <option value="Full Price">Full Price</option>
+                                </select>
+                        </div>
+                    </div> -->
+
+            <div class="col-lg-12 text-right">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="button button-big button-dark"
+              >
+                SUBMIT
+              </button>
+              <!-- <button class="button button-big button-dark" onclick="contact_send();">SUBMIT</button> -->
+            </div>
+          </div>
+        </form>
+        <div class="social-reg text-center">
+          <p>OR REGISTER USING</p>
+          <div class="google">
+            <a href="/auth/google">
+              <span><img src="/img/google1.png" alt="google" /></span>
+            </a>
+            <a href="/auth/facebook">
+              <span
+                ><img src="/img/fb.png" alt="facebook" width="25" height="25"
+              /></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="register-page">
+  <div class="container blogs" data-aos="fade-up">
+        <!-- <h2 class="secondary_title text-center">Feel free to ping us anytime.</h2>
+        <div class="page-subtitle text-center">Drop a mail or call us to know more</div> -->
+        <div class="row first pt-5">
+            <div class="col-md-6 contact-us-over pr-md-0">
+                <img src="http://kpit.webtrixsolutions.com//images/contact-us.jpg">
+            </div>
+            <div class="col-md-6 conact-us-form">
+                <form id="contactUsForm" action="register"  method="post">
+                    <div class="form-row">
+                        <!-- <div class="col-12 form-group">
+                            <label>Enquiry Type*</label><br/>
+                            <select name="enquryType" id="enquryType">
+                                <option selected="" value="Student">Student</option>
+                                <option value="For Incubation">For Incubation</option>
+                            </select>
+                            <div class="validate"></div>
+                        </div> -->
+                        <div class="col-12 form-group">
+                            <label class="studentShow">Full Name*</label>
+                            <!-- <label class="forIncubation">Company/Institute Name*</label> -->
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-12 form-group">
+                            <label>Email ID*</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-12 form-group studentShow">
+                            <label>Contact Number*</label>
+                            <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Enter your number">
+                            <div class="validate"></div>
+                        </div>
+                        <!-- <div class="col-12 form-group forIncubation">
+                            <label>Reason Of Contacting?</label>
+                            <select id="conReason" name="conReason">
+                                <option value="">Select</option>
+                                <option value="Unable to register">Unable to register</option>
+                                <option value="Need more Information">Need more Information</option>
+                                <option value="Want to partner with the contest">Want to partner with the contest</option>
+                            </select>
+                            <div class="validate"></div>
+                        </div> -->
+                        <div class="control-group col-lg-6">
+                          <div class="controls">
+                            <label for="country">COUNTRY</label><br />
+                            <input
+                              type="text"
+                              name="user[country]"
+                              id="country"
+                              required
+                              data-validation-required-message="Please enter your country"
+                            />
+                          </div>
+                        </div>
+            
+                        <div class="control-group col-lg-6">
+                          <div class="controls">
+                            <label for="city">CITY</label><br />
+                            <input
+                              type="text"
+                              name="user[city]"
+                              id="city"
+                              required
+                              data-validation-required-message="Please enter your city"
+                            />
+                          </div>
+                        </div>
+                        <!-- <div class="col-12 form-group">
+                            <label>Any Message</label><br/>
+                            <textarea style="width:100%" id="message" name="message" placeholder="Write here...."></textarea>
+                        </div>
+                        <div class="col-12 form-group">
+                           <div class="g-recaptcha" data-sitekey="6LeK_UocAAAAAEnGzLYLbgZRCFa4tdqo7Gd7A66g"></div>
+                        </div> -->
+                        <div class="col-12 form-group">
+                            <input type="submit" name="save" id="save" value="SEND"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
