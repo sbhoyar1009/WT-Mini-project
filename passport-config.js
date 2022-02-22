@@ -25,7 +25,6 @@ module.exports = function (passport) {
         callbackURL: "http://localhost:9000/auth/google/callback",
       },
       (accessToken, refreshToken, profile, email, done) => {
-  
         User.findOne({ email: email.emails[0].value }, (err, user) => {
           if (err) {
             // req.flash("error", "Something went wrong!!!");
@@ -34,7 +33,10 @@ module.exports = function (passport) {
             User.create(
               { email: email.emails[0].value, fullName: email.displayName, registeredUsing : "Google" },
               (err, user) => {
-                // sendMail.registrationSuccessful(email.emails[0].value, email.displayName);
+                // sendMail.registrationSuccessful(
+                //   email.emails[0].value,
+                //   email.displayName
+                // );
                 return done(err, user);
               }
             );
@@ -62,7 +64,6 @@ module.exports = function (passport) {
 //         if (err) throw err;
 //         if (!err && user != null) return done(null, user);
 
-       
 //         var user = new User({
 //           provider_id: profile.id,
 //           provider: profile.provider,

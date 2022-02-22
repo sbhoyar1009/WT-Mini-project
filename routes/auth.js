@@ -42,21 +42,19 @@ router.post("/register", async (req, res) => {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
         // sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
-        res.render("post-registration", { status: "success",alreadyRegistered:false });
-        return done(null,user);
+        res.render("post-registration", {
+          status: "success",
+          alreadyRegistered: false,
+        });
       }
     });
   }
 });
 
-// check is user already registered middleware 
+// check is user already registered middleware
 // const isUserAlreadyRegistered = (req, res, next) => {
 //   console.log(req)
 // };
-
-
-
-
 
 router.get(
   "/auth/google",
@@ -65,16 +63,16 @@ router.get(
 
 router.get(
   "/auth/google/callback",
-  // passport.authenticate("google", {
-  //   successRedirect: "/registration/successful",
-  //   failureRedirect: "/register",
-  // }),
-  // (req, res) => {
-  //   console.log("req.user", req.user);
-  // }
-  (req,res)=>{
-    res.render("post-registration",{status:"success",alreadyRegistered:false})
+  passport.authenticate("google", {
+    successRedirect: "/registration/successful",
+    failureRedirect: "/register",
+  }),
+  (req, res) => {
+    console.log("req.user", req.user);
   }
+  // (req,res)=>{
+  //   res.render("post-registration",{status:"success",alreadyRegistered:false})
+  // }
 );
 
 // router.get(

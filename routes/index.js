@@ -3,13 +3,23 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   router = express.Router({ mergeParams: true });
 
+const Admin = require("../models/admin");
 const User = require("../models/user");
 
 dotenv.config();
 
 const isAdmin = (req, res, next) => {
   if (req.user) {
-    next();
+    console.log(req.user);
+    Admin.findOne({username:req.user.username},(err,user)=>{
+      if(err || !user || user==null){
+          return res.redirect("back");
+      }
+      else{
+        next();
+      }
+    })
+
   } else {
     res.redirect("/admin");
   }
@@ -21,6 +31,10 @@ router.get("/", (req, res) => {
 
 router.get("/register", (req, res) => {
   res.render("register");
+});
+
+router.get("/registration/successful", (req, res) => {
+  res.render("post-registration",{status:'success',alreadyRegistered:false});
 });
 
 router.get("/admin", async (req, res) => {
