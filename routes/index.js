@@ -19,15 +19,8 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/register", function (req, res) {
+router.get("/register", (req, res) => {
   res.render("register");
-});
-
-router.get("/registration/successful", function (req, res) {
-  res.render("post-registration", { alreadyRegistered: false });
-});
-router.get("/already-registered", function (req, res) {
-  res.render("post-registration", { alreadyRegistered: true });
 });
 
 router.get("/admin", async (req, res) => {

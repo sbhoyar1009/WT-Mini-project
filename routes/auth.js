@@ -18,8 +18,10 @@ router.post("/register", async (req, res) => {
   let userExist = await User.findOne({ email: userData.email });
   if (userExist) {
     // req.flash("error", "User already exist");
-
-    res.redirect("already-registered");
+    res.render("post-registration", {
+      status: "success",
+      alreadyRegistered: true,
+    });
   } else {
     let newUser = new User({
       username: userData.email,
@@ -39,11 +41,20 @@ router.post("/register", async (req, res) => {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
         // sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
-        res.redirect("/registration/successful");
+        res.render("post-registration", { status: "success" });
       }
     });
   }
 });
+
+// check is user already registered middleware 
+// const isUserAlreadyRegistered = (req, res, next) => {
+//   console.log(req)
+// };
+
+
+
+
 
 router.get(
   "/auth/google",
