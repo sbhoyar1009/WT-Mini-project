@@ -69,7 +69,8 @@ body {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
   background-color: transparent !important;
   border: none;
   border-radius: 0;
@@ -228,6 +229,7 @@ input[type="email"] {
 .social-share .social-icons img {
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
   margin: 1.5rem 1rem;
 }
 
