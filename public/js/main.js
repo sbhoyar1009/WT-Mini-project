@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
   //COUNTDOWN TIMER
   var newYear = new Date();
   newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);
-  $("#countdown").countdown({ until: new Date(2014, 12 - 1, 18) }); // enter event day
+  $("#countdown").countdown({ until: new Date(2022, 2, 24) }); // enter event day
 
   $("#removeCountdown").toggle(
     function () {
@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
 
   //MAGNIFIC POPUP LOAD CONTENT VIA AJAX
   $(".speaker-detail").magnificPopup({ type: "ajax" });
-  $(".register").magnificPopup({ type: "ajax" });
+  // $(".register").magnificPopup({ type: "ajax" });
 
   //MAGNIFIC POPUP IMAGE
   $(".image-link").magnificPopup({ type: "image" });

@@ -1,6 +1,9 @@
 const passport = require("passport"),
   GoogleStrategy = require("passport-google-oauth20").Strategy,
+  // FacebookStrategy = require("passport-facebook").Strategy,
   User = require("./models/user");
+
+const sendMail = require("./emails");
 
 module.exports = function (passport) {
   // Serializa al usuario para almacenarlo en la sesión
@@ -22,16 +25,16 @@ module.exports = function (passport) {
         callbackURL: "http://localhost:9000/auth/google/callback",
       },
       (accessToken, refreshToken, profile, email, done) => {
-        console.log(profile);
-        console.log(email);
-        User.findOne({ username: email.emails[0].value }, (err, user) => {
+  
+        User.findOne({ email: email.emails[0].value }, (err, user) => {
           if (err) {
             // req.flash("error", "Something went wrong!!!");
-            res.redirect("/");
+            done(err, user);
           } else if (!user) {
             User.create(
-              { username: email.emails[0].value, fullName: email.displayName },
+              { email: email.emails[0].value, fullName: email.displayName },
               (err, user) => {
+                // sendMail.registrationSuccessful(email.emails[0].value, email.displayName);
                 return done(err, user);
               }
             );
@@ -44,3 +47,33 @@ module.exports = function (passport) {
     )
   );
 };
+
+// passport.use(
+//   new FacebookStrategy(
+//     {
+//       clientID: process.env.FB_KEY,
+//       clientSecret: process.env.FB_SECRET,
+//       callbackURL: "/auth/facebook/callback",
+//       profileFields: ["id", "displayName", "photos"],
+//     },
+//     function (accessToken, refreshToken, profile, done) {
+//       return console.log(profile);
+//       User.findOne({ provider_id: profile.id }, function (err, user) {
+//         if (err) throw err;
+//         if (!err && user != null) return done(null, user);
+
+       
+//         var user = new User({
+//           provider_id: profile.id,
+//           provider: profile.provider,
+//           name: profile.displayName,
+//           photo: profile.photos[0].value,
+//         });
+//         user.save(function (err) {
+//           if (err) throw err;
+//           done(null, user);
+//         });
+//       });
+//     }
+//   )
+// );

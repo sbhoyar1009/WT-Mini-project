@@ -23,6 +23,11 @@
 
 /* CORE CSS */
 
+*::selection {
+  background: #8fdb00;
+  color: #000;
+}
+
 body {
   color: #f7f7f7;
   background: #212121;
@@ -297,10 +302,18 @@ body {
 
 /* FORM ELEMENTS */
 
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
 select {
   color: #f7f7f7;
+} */
+
+input[type="text"],
+input[type="email"] {
+  background-color: transparent !important;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #C8C8C85C;
 }
 
 ::-webkit-input-placeholder {
