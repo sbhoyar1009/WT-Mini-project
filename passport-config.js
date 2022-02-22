@@ -32,7 +32,7 @@ module.exports = function (passport) {
             done(err, user);
           } else if (!user) {
             User.create(
-              { email: email.emails[0].value, fullName: email.displayName },
+              { email: email.emails[0].value, fullName: email.displayName, registeredUsing : "Google" },
               (err, user) => {
                 // sendMail.registrationSuccessful(email.emails[0].value, email.displayName);
                 return done(err, user);

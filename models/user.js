@@ -1,5 +1,4 @@
 const mongoose = require("mongoose"),
-  dotenv = require("dotenv"),
   passportLocalMongoose = require("passport-local-mongoose");
 
 // mongoose.set('useFindAndModify', false);
@@ -12,6 +11,8 @@ var userSchema = new mongoose.Schema({
   country: { type: String },
   state: { type: String },
   city: { type: String },
+  registeredOn: { type: Date, default: Date.now },
+  registeredUsing : {type:String, default: "Manual"}
 });
 
 userSchema.plugin(passportLocalMongoose);

@@ -671,6 +671,8 @@ h4 {
 /* register form */
 
 #register-form {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   padding: 25px;
 }
 
@@ -682,6 +684,9 @@ h4 {
   margin-top: 20px;
 }
 
+.register-form input {
+  color: black !important;
+}
 /* CONTACT */
 
 #contact {

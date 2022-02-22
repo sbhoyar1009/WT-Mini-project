@@ -5,8 +5,10 @@ const bodyParser = require("body-parser"),
   passportLocalMongoose = require("passport-local-mongoose"),
   express = require("express"),
   dotenv = require("dotenv"),
-  User = require("./models/user"),
+  Admin = require("./models/admin"),
   app = express();
+
+const flash = require("connect-flash");
 
 dotenv.config();
 // require("./passport-config");
@@ -25,7 +27,7 @@ mongoose
   .then(() => console.log("Connected to DB!"))
   .catch((error) => console.log(error.message));
 
-passport.use(new localStrategy(User.authenticate()));
+passport.use(new localStrategy(Admin.authenticate()));
 
 app.use(
   require("express-session")({
@@ -39,18 +41,24 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
+
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  res.locals.warning = req.flash("warning");
+  next();
+});
 
 app.use(mainRoutes);
 app.use(authRoutes);
-
-// app.get("/",(req,res)=>{
-//     res.render("index")
-// })
 
 app.listen(process.env.PORT || 9000, function () {
   console.log("The Server is Listening!!!");
