@@ -7,7 +7,7 @@ const express = require("express"),
   //   middleware = require("../middleware"),
   passport = require("passport");
 
-const sendMail = require('../emails');
+const sendMail = require("../emails");
 
 dotenv.config();
 
@@ -18,8 +18,8 @@ router.post("/register", async (req, res) => {
   let userExist = await User.findOne({ email: userData.email });
   if (userExist) {
     // req.flash("error", "User already exist");
-    console.log("Already Registered");
-    res.redirect("back");
+
+    res.redirect("already-registered");
   } else {
     let newUser = new User({
       username: userData.email,
@@ -56,7 +56,9 @@ router.get(
     successRedirect: "/registration/successful",
     failureRedirect: "/register",
   }),
-  (req, res) => {}
+  (req, res) => {
+    console.log("req.user", req.user);
+  }
 );
 
 // router.get(

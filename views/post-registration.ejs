@@ -58,7 +58,12 @@
 </svg>
                         </div>
                         <div class="card-body">
+                          <% if(alreadyRegistered){ %>
+                          <h3 class="card-title">You have already registered for KPIT Sparkle Grand Finale</h3>
+                          <% } else { %>
                           <h3 class="card-title">Perfect! You have successfully registered for KPIT Sparkle Grand Finale</h3>
+                          <% } %>
+                         
                           <br/>
                           <p class="card-text"><em><small>“Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious.”</small></em></p>
                           <!-- <a href="https://wa.me/?text=This is an automated message sent for testing of sparkle.kpit.com" class="btn btn-primary" target="_blank">W</a>
