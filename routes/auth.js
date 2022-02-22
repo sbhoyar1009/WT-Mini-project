@@ -39,7 +39,7 @@ router.post("/register", async (req, res) => {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
         // sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
-        res.redirect("/registration/successful");
+        res.render("post-registration", { status: "success" });
       }
     });
   }

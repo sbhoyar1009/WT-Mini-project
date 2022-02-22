@@ -19,13 +19,13 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/register", function (req, res) {
+router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.get("/registration/successful", function (req, res) {
-  res.render("post-registration");
-});
+// router.get("/registration/successful", (req, res) => {
+//   res.render("post-registration");
+// });
 
 router.get("/admin", async (req, res) => {
   res.render("secrete");
