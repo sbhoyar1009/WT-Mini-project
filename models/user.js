@@ -1,22 +1,17 @@
-const mongoose = require('mongoose'),
-      dotenv   = require('dotenv'),
-      passportLocalMongoose = require("passport-local-mongoose");
-
-
-
+const mongoose = require("mongoose"),
+  passportLocalMongoose = require("passport-local-mongoose");
 
 // mongoose.set('useFindAndModify', false);
 
-
 var userSchema = new mongoose.Schema({
-	fullName : {type : String, required : true},
-	password : {type : String, required : true},
-	email : {type : String, unique : true, required : true},
-	contactNumber : {type : String, required : true},
-	country:{type:String, required:true},
-	state:{type:String},
-	city:{type:String, required:true}
-	
+  fullName: { type: String },
+  // password: { type: String },
+  email: { type: String },
+  contactNumber: { type: String },
+  country: { type: String },
+  state: { type: String },
+  city: { type: String },
+  registeredOn: { type: Date, default: Date.now },
 });
 
 userSchema.plugin(passportLocalMongoose);

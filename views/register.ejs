@@ -1,77 +1,201 @@
-<div class="container">
-	<div class="row">
-        <div id="register-form" class="col-lg-6 col-lg-offset-3">
-            <div class="row">
-            	<button title="Close (Esc)" type="button" class="mfp-close">×</button>
-                
-                <div class="col-lg-12">
-                	<h2 class="uppercase">register</h2>
-                    <!-- <p>Maecenas vitae tincidunt nibh. Praesent tristique lacus quis ante venenatis posuere. Aenean adipiscing dictum mollis. Suspendisse potenti. Proin pretium lectus ut leo fringilla mattis. Mauris ultrices rutrum sagittis. Pellentesque vitae nibh elit. Fusce lacinia, elit non iaculis fermentum, metus justo posuere neque, sed viverra ligula turpis sit amet quam. Integer ac risus libero. Curabitur sit amet sem leo</p> -->
-                </div>
-                <!-- REGISTER FORM -->
-                <form id="registration" action="/register" method="post">
-                <div class="register-form col-lg-12">
-                    <div class="control-group">
-                        <div class="controls">
-                            <label for="name">NAME</label><br>
-                            <input type="text" name="user[name]" id="name" required data-validation-required-message="Please enter your name" onchange="" />
-                        </div>
-                    </div>
-                
-                    <div class="control-group">
-                        <div class="controls ">                           
-                            <label for="email">EMAIL</label><br>
-                            <input type="email" name="user[email]" id="email"  required data-validation-required-message="Please enter your email" />
-                        </div>
-                    </div>
-                
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="phone">PHONE</label><br>
-                            <input type="text" name="user[phone]" id="phone" required data-validation-required-message="Please enter your phone" />
-                        </div>
-                    </div>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <title>KPIT SPARKLE - Finale Registration</title>
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="country">COUNTRY</label><br>
-                            <input type="text" name="user[country]" id="country" required data-validation-required-message="Please enter your country" />
-                        </div>
-                    </div>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content="Evential - One Page Event HTML Template"
+    />
+    <meta name="author" content="themecube" />
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="city">CITY</label><br>
-                            <input type="text" name="user[city]" id="city" required data-validation-required-message="Please enter your city" />
-                        </div>
-                    </div>
+    <!-- viewport settings -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-                    <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="password">PASSWORD</label><br>
-                            <input type="text" name="user[password]" id="password" required data-validation-required-message="Please enter your password" />
-                        </div>
-                    </div>
-                    
-                     <!-- <div class="control-group">
-                        <div class="controls ">                            
-                            <label for="type">TYPE</label><br>
-                            <select name="type" id="type">
-                                    <option value="" disabled selected="selected">Select type</option>
-                                    <option value="Early Bird">Early Bird</option>
-                                    <option value="Standart">Standart</option>
-                                    <option value="Full Price">Full Price</option>
-                                </select>
-                        </div>
-                    </div> -->
-                
-                    <div class="col-lg-12 text-right">
-                        <button class="button button-big button-dark" type="submit">SUBMIT</button>
-                        <!-- <button class="button button-big button-dark" onclick="contact_send();">SUBMIT</button> -->
-                    </div>
-                </div>
-            </form>
-            </div>
+    <!-- CSS -->
+
+    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/jquery.countdown.css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/css/flipCard.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.css" />
+    <link rel="stylesheet" href="/css/owl.theme.css" /> -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+    <link rel="stylesheet" href="/css/register.css" />
+    <!-- <link rel="stylesheet" href="/css/color/green.css" /> -->
+    <!-- Choose your color, green, blue, yellow, red, darkblue, purple -->
+
+    <!-- Font -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Economica:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- PRELOADING  -->
+    <!-- <div id="preload">
+      <div class="preload">
+        <div class="loader">Loading...</div>
+      </div>
+    </div> -->
+
+    <!-- NAVIGATION -->
+    <!-- <nav class="navbar navbar-fixed-top navbar-custom" role="navigation">
+      <div class="container">
+        <div data-scroll-header class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#nav"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"
+            ><img src="/img/logo.png" alt="logo"
+          /></a>
         </div>
-    </div>
-</div>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="nav navbar-nav navbar-right uppercase">
+            <li><a data-scroll href="#overview">ABOUT US</a></li>
+            <li><a data-scroll href="#speakers">Speakers</a></li>
+            <li><a data-scroll href="#schedule">Schedule</a></li>
+            <li><a data-scroll href="#register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    <main class="register-page mt-3">
+      <div class="container">
+        <h2 class="text-center head-title">
+          KPIT SPARKLE - Grand Finale Registrations
+        </h2>
+        <section class="registration row">
+          <!-- <div class="row"> -->
+
+          <div class="col-sm-12 col-lg-6 left-img">
+            <div>
+              <img src="img/logo.png" />
+              <h3>Grand Finale Registrations</h3>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="registration-form">
+              <div class="google-auth">
+                Register Using
+                <div style="margin-left: 1rem">
+                  <a href="/auth/google"
+                    ><img
+                      src="img/google1.png"
+                      style="width: 30px; height: 30px"
+                  /></a>
+                </div>
+              </div>
+              <hr class="hr-text" data-content="OR" />
+              <form class="form mt-2" action="/register" method="POST">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input
+                    type="text"
+                    name="user[name]"
+                    id="name"
+                    required
+                    data-validation-required-message="Please enter your full name"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email ID *</label>
+                  <input
+                    type="email"
+                    name="user[email]"
+                    class="form-control"
+                    id="email"
+                    required
+                    data-validation-required-message="Please enter your email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Contact Number *</label>
+                  <input
+                    type="text"
+                    name="user[phone]"
+                    id="phone"
+                    class="form-control"
+                    required
+                    data-validation-required-message="Please enter your phone"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="country">Country </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="user[country]"
+                        id="country"
+                        required
+                        data-validation-required-message="Please enter your country"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="city">City </label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="user[city]"
+                        id="city"
+                        required
+                        data-validation-required-message="Please enter your city"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button class="btn">REGISTER</button>
+              </form>
+            </div>
+          </div>
+          <!-- </div> -->
+        </section>
+      </div>
+    </main>
+
+    <!-- modernizr -->
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/register.js"></script> -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
