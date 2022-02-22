@@ -153,100 +153,102 @@ $(window).load(function () {
   $(window).scroll(function () {
     if ($(".navbar").offset().top > 50) {
       $(".navbar-fixed-top").addClass("top-nav-collapse");
+      $(".n-link").addClass("n-link-b");
     } else {
       $(".navbar-fixed-top").removeClass("top-nav-collapse");
+      $(".n-link").removeClass("n-link-b");
     }
   });
 });
 
 // CONTACT FORM FUNCTION
-var contact_send = function () {
-  "use strict";
+// var contact_send = function () {
+//   "use strict";
 
-  var name = $("#name").val();
-  var email = $("#email").val();
-  var phone = $("#phone").val();
-  var country = $("#country").val();
-  var city = $("#city").val();
-  var password = $("#password").val();
+//   var name = $("#name").val();
+//   var email = $("#email").val();
+//   var phone = $("#phone").val();
+//   var country = $("#country").val();
+//   var city = $("#city").val();
+//   var password = $("#password").val();
 
-  let formData = {
-    name,
-    email,
-    phone,
-    country,
-    city,
-    password,
-  };
+//   let formData = {
+//     name,
+//     email,
+//     phone,
+//     country,
+//     city,
+//     password,
+//   };
 
-  if (name == "") {
-    alert("name area is empty!");
-    $("#name").focus();
-  } else if (email == "") {
-    alert("email address area is empty!");
-    $("#email").focus();
-  } else if (phone == "") {
-    alert("phone number area is empty!");
-    $("#phone").focus();
-  } else if (country == "") {
-    alert("register type isn't selected!");
-    $("#country").focus();
-  } else {
-    // $.post("/register", { name:name, email:email, phone:phone, type:type }, function( result ){
-    // 	if ( result=="SUCCESS" ){
-    // 		alert("Your contact form is sent.");
-    // 		setTimeout(function(){
-    // 			$("#name").val("");
-    // 			$("#email").val("");
-    // 			$("#phone").val("");
-    // 			$("#type").val("");
-    // 		}, 3000);
-    // 	} else {
-    // 		alert("Your contact form isn't sent. Please check fields and try again.");
-    // 	}
-    // });
-    console.log(formData);
-    e.preventDefault();
-    const res = fetch("/register", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    });
-    const data = res.json();
-  }
-};
+//   if (name == "") {
+//     alert("name area is empty!");
+//     $("#name").focus();
+//   } else if (email == "") {
+//     alert("email address area is empty!");
+//     $("#email").focus();
+//   } else if (phone == "") {
+//     alert("phone number area is empty!");
+//     $("#phone").focus();
+//   } else if (country == "") {
+//     alert("register type isn't selected!");
+//     $("#country").focus();
+//   } else {
+//     // $.post("/register", { name:name, email:email, phone:phone, type:type }, function( result ){
+//     // 	if ( result=="SUCCESS" ){
+//     // 		alert("Your contact form is sent.");
+//     // 		setTimeout(function(){
+//     // 			$("#name").val("");
+//     // 			$("#email").val("");
+//     // 			$("#phone").val("");
+//     // 			$("#type").val("");
+//     // 		}, 3000);
+//     // 	} else {
+//     // 		alert("Your contact form isn't sent. Please check fields and try again.");
+//     // 	}
+//     // });
+//     console.log(formData);
+//     e.preventDefault();
+//     const res = fetch("/register", {
+//       method: "POST",
+//       body: JSON.stringify(formData),
+//       headers: { "Content-Type": "application/json" },
+//     });
+//     const data = res.json();
+//   }
+// };
 
-const reg_user = (e) => {
-  e.preventDefault();
-};
+// const reg_user = (e) => {
+//   e.preventDefault();
+// };
 
 /* Newsletter Functions */
-var newsletter_send = function () {
-  "use strict";
+// var newsletter_send = function () {
+//   "use strict";
 
-  var email = $("#newsletter_email").val();
-  if (email == "") {
-    alert("Your email address is empty!");
-    $("#newsletter_email").focus();
-  } else {
-    $.post("newsletter.send.php", { email: email }, function (result) {
-      console.log(result);
+//   var email = $("#newsletter_email").val();
+//   if (email == "") {
+//     alert("Your email address is empty!");
+//     $("#newsletter_email").focus();
+//   } else {
+//     $.post("newsletter.send.php", { email: email }, function (result) {
+//       console.log(result);
 
-      if (result == "SUCCESS") {
-        alert("Thank you. Your email is added to our database.");
-        setTimeout(function () {
-          $("#newsletter_email").val("");
-        }, 3000);
-      } else if (result == "EXIST") {
-        alert("Error. Your email address is already exist our database.");
-        $("#newsletter_email").focus();
-      } else {
-        alert("Error. Your email isn't added to our database.");
-        $("#newsletter_email").focus();
-      }
-    });
-  }
-};
+//       if (result == "SUCCESS") {
+//         alert("Thank you. Your email is added to our database.");
+//         setTimeout(function () {
+//           $("#newsletter_email").val("");
+//         }, 3000);
+//       } else if (result == "EXIST") {
+//         alert("Error. Your email address is already exist our database.");
+//         $("#newsletter_email").focus();
+//       } else {
+//         alert("Error. Your email isn't added to our database.");
+//         $("#newsletter_email").focus();
+//       }
+//     });
+//   }
+// };
 
 //GOOGLE MAP
 function init_map() {
