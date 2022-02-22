@@ -39,17 +39,21 @@ body {
   color: #ffffff;
 }
 
-.navbar-custom a {
-  color: #ffffff;
+.navbar-custom .n-link {
+  color: #fff;
+}
+
+.navbar-custom .n-link-b {
+  transition: all 1s ease-in-out;
+  color: #212121;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
-  color: #008177;
-  color: #68a000;
+  color: #212121;
 }
 
 .navbar-custom .navbar-toggle {
-  background: #ffffff;
+  background: #212121;
 }
 
 .top-nav-collapse {
@@ -313,7 +317,7 @@ input[type="email"] {
   background-color: transparent !important;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #C8C8C85C;
+  border-bottom: 1px solid #c8c8c85c;
 }
 
 ::-webkit-input-placeholder {

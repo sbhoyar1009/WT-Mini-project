@@ -56,11 +56,11 @@
 }
 
 h2 {
-    font-family: "sinkin_sans600_semibold";
-    font-size: 27px;
-    margin-top: 0;
-    margin-bottom: 40px;
-  }
+  font-family: "sinkin_sans600_semibold";
+  font-size: 27px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
 
 body {
   color: #f7f7f7;
@@ -73,15 +73,17 @@ input[type="email"] {
   background-color: transparent !important;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #C8C8C85C;
+  border-bottom: 1px solid #c8c8c85c;
   color: #fff !important;
+  transition: all 1s;
 }
 
-.registration-form{
+.registration-form {
   padding: 4rem;
 }
 
-.register-page .registration {
+.register-page .registration,
+.post-registration-page .card {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -90,20 +92,20 @@ input[type="email"] {
   border-radius: 0.5rem;
 }
 
-.register-page .head-title{
+.register-page .head-title {
   margin-top: 5rem;
 }
 
- .left-img{
+.left-img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50% !important;
-  background: url('/img/register-bg.png') !important;
+  background: url("/img/register-bg.png") !important;
   background-size: cover !important;
 }
 
-.register-page .register-form input.form-control {
+.register-page .register-form .form-control {
   background-color: transparent;
   background: transparent;
   border: none;
@@ -119,21 +121,30 @@ input[type="email"] {
   width: 100%;
 }
 
+.form-control:focus {
+  border-bottom: 1px solid #8fdb00;
+  box-shadow: none;
+}
+
 .btn {
   background-color: #8fdb00 !important;
   border: none;
   border-radius: 0;
   color: #000;
   font-size: 1.5rem;
+  padding: 1rem 2rem;
   font-weight: 500;
-  height: 5rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  margin-left: 40% !important;
+  /* margin-left: 40% !important; */
   font-weight: bold;
 }
 
-.google-auth{
+.register-page .btn {
+  margin-left: 40% !important;
+}
+
+.google-auth {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,34 +161,141 @@ input[type="email"] {
 }
 
 .hr-text {
-    line-height: 1em;
-    position: relative;
-    outline: 0;
-    border: 0;
-    color: black;
-    text-align: center;
-    height: 1.5em;
-    opacity: 0.5;
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: 0.5;
+}
+
+.hr-text:before {
+  content: "";
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  /* color: black; */
+  padding: 0 0.5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #2a2a2b;
+}
+
+.post-registration-page .countdown .card {
+  /* font-family: "Work Sans", sans-serif; */
+  font-family: "sinkin_sans600_semibold";
+  padding: 2rem;
+  max-width: 60%;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.card-body p {
+  font-family: "sinkin_sans400_regular";
+}
+
+.card-body p::before {
+  content: "\275D";
+  margin: 2px;
+}
+
+.card-body p::after {
+  content: "\275E";
+  margin: 2px;
+}
+
+.social-share {
+  margin-top: 2rem;
+}
+
+.social-share .social-icons img {
+  width: 2rem;
+  height: 2rem;
+  margin: 1.5rem 1rem;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
   }
-  .hr-text:before {
-    content: '';
-    background: linear-gradient(to right, transparent, #818078, transparent);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 1px;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  .hr-text:after {
-    content: attr(data-content);
-    position: relative;
-    display: inline-block;
-    /* color: black; */
-    padding: 0 0.5em;
-    line-height: 1.5em;
-    color: #818078;
-    background-color: #2a2a2b;
-    
+}
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 211px;
   }
-  
- 
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 50px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#successAnimationCircle {
+  stroke-dasharray: 211px 211px;
+  stroke: #8fdb00;
+}
+#successAnimationCheck {
+  stroke-dasharray: 50px 50px;
+  stroke: #8fdb00;
+}
+#successAnimationResult {
+  fill: #8fdb00;
+  opacity: 0;
+}
+#successAnimation.animated {
+  animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+#successAnimation.animated #successAnimationCircle {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle,
+    0.3s linear 0.9s 1 both fadeOut;
+}
+#successAnimation.animated #successAnimationCheck {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck,
+    0.3s linear 0.9s 1 both fadeOut;
+}
+#successAnimation.animated #successAnimationResult {
+  animation: 0.3s linear 0.9s both fadeIn;
+}

@@ -11,14 +11,12 @@ router.get("/", (req,res)=>{
 })
 
 router.get("/register", function (req, res) {
-    res.render("register");
-  });
-  
+  res.render("register");
+});
 
-router.get("/post-registration", (req, res) => {
-
-    res.render("post-registration");
-  });
+router.get("/registration/successful", function (req, res) {
+  res.render("post-registration");
+});
 
 
 module.exports = router;
