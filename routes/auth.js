@@ -16,7 +16,7 @@ router.post("/register", async (req, res) => {
   let userData = req.body.user;
   // console.log(req.body.user);
 
-  let userExist = await User.findOne({ email: userData.email });
+  let userExist = await User.findOne({ email: userData.email.toLowerCase() });
   if (userExist) {
     // req.flash("error", "User already exist");
     res.render("post-registration", {
@@ -28,7 +28,7 @@ router.post("/register", async (req, res) => {
     let newUser = new User({
       // username: userData.email,
       fullName: userData.name,
-      email: userData.email,
+      email: userData.email.toLowerCase(),
       contactNumber: userData.phone,
       country: userData.country,
       city: userData.city,
@@ -45,7 +45,7 @@ router.post("/register", async (req, res) => {
         // console.log(newUser);
         const parameters = new URLSearchParams({
           name: newUser.fullName,
-          email: newUser.email,
+          email: newUser.email.toLowerCase(),
           contactNumber: newUser.contactNumber ? newUser.contactNumber : "",
           city: newUser.city ? newUser.city : "",
           state: newUser.state ? newUser.state : "",
@@ -61,14 +61,14 @@ router.post("/register", async (req, res) => {
               r.data.message[0] == "User added successfuly"
             ) {
               User.findOneAndUpdate(
-                { email: newUser.email },
+                { email: newUser.email.toLowerCase() },
                 { userRegisteredOnEventWebsite: true },
                 (err, u) => {
                   if (err) {
                     console.log(err);
                   } else {
                     console.log("User Added to event website successfully");
-                    //sendMail.registrationSuccessful(u.email, u.fullName);
+                    //sendMail.registrationSuccessful(u.email.toLowerCase(), u.fullName);
                     // console.log(
                     //   "Successfully Registered, Login with your Credentials!!!"
                     // );
