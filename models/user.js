@@ -5,13 +5,13 @@ const mongoose = require("mongoose"),
 
 var userSchema = new mongoose.Schema({
   fullName: { type: String },
-  // password: { type: String },
   email: { type: String },
   contactNumber: { type: String },
   country: { type: String },
   state: { type: String },
   city: { type: String },
   registeredOn: { type: Date, default: Date.now },
+  userRegisteredOnEventWebsite: { type: Boolean, default: false },
 });
 
 userSchema.plugin(passportLocalMongoose);

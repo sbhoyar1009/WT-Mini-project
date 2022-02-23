@@ -5,27 +5,35 @@ const smtpTransport = nodeMailer.createTransport({
   port: 10025,
 });
 
-const sendMail = {};
+smtpTransport.verify(function (error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
 
-sendMail.registrationSuccessful = (toMail, name) => {
+const send = {};
+
+send.registrationSuccessful = (toMail, name) => {
   let mailOptions = {
-    from: "KPIT Sparkle 2022",
+    from: "kpitsparklegrandfinale2022@kpit.com",
     to: toMail,
-    subject: "Registration Successful",
+    subject: "KPIT Sparkle 2022 Grand Finale Registration Successful",
     text: `Hi ${name},\n\nYou have successfully registered for KPIT Sparkle 2022.\n\nRegards,\nKPIT Sparkle 2022 Team`,
   };
 
-  console.log(mailOptions);
+  // console.log(mailOptions);
 
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.log(error);
     } else {
-      console.log("Message sent: " + response);
+      // console.log("Message sent: " + response);
     }
   });
 };
 
-sendMail.registrationSuccessful("tejasborde99@gmail.com", "Tejas");
+// send.registrationSuccessful("sbhoyar1009@gmail.com", "Shreyas Bhoyar");
 
-module.exports = sendMail;
+module.exports = send;

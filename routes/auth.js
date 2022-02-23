@@ -4,6 +4,8 @@ const express = require("express"),
   //   nodeMailer = require("nodemailer"),
   dotenv = require("dotenv"),
   User = require("../models/user"),
+  axios = require("axios"),
+  querystring = require("querystring"),
   Admin = require("../models/admin"),
   passport = require("passport");
 
@@ -39,6 +41,15 @@ router.post("/register", async (req, res) => {
         res.redirect("back");
       } else {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
+        const parameters = querystring.stringify(newUser);
+        axios
+          .get("http://localhost:9000/add-user-manually?" + parameters)
+          .then((res) => {
+            console.log(res.data.user);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
         // sendMail.registrationSuccessful(userData.email, userData.name);
         console.log("Successfully Registered, Login with your Credentials!!!");
         res.render("post-registration", {
@@ -50,11 +61,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// check is user already registered middleware
-// const isUserAlreadyRegistered = (req, res, next) => {
-//   console.log(req)
-// };
-
+router.get("/add-user-manually", (req, res) => {
+  let name = req.query.name;
+  console.log(name);
+  res.send({ user: { name: name } });
+});
 router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
