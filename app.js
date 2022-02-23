@@ -8,7 +8,7 @@ const bodyParser = require("body-parser"),
   Admin = require("./models/admin"),
   app = express();
 
-// const flash = require("connect-flash");
+const flash = require("connect-flash");
 
 dotenv.config();
 // require("./passport-config");
@@ -41,7 +41,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(flash());
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,9 +51,9 @@ passport.deserializeUser(Admin.deserializeUser());
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
-  // res.locals.error = req.flash("error");
-  // res.locals.success = req.flash("success");
-  // res.locals.warning = req.flash("warning");
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  res.locals.warning = req.flash("warning");
   next();
 });
 

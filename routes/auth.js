@@ -24,9 +24,10 @@ router.post("/register", async (req, res) => {
       status: "success",
       alreadyRegistered: true,
     });
+    // return done(null,userExist);
   } else {
     let newUser = new User({
-      username: userData.email,
+      // username: userData.email,
       fullName: userData.name,
       email: userData.email,
       contactNumber: userData.phone,
@@ -80,6 +81,9 @@ router.get(
   (req, res) => {
     console.log("req.user", req.user);
   }
+  // (req,res)=>{
+  //   res.render("post-registration",{status:"success",alreadyRegistered:false})
+  // }
 );
 
 // router.get(

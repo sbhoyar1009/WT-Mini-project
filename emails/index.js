@@ -34,6 +34,6 @@ send.registrationSuccessful = (toMail, name) => {
   });
 };
 
-// send.registrationSuccessful("sbhoyar1009@gmail.com", "Shreyas Bhoyar");
+// sendMail.registrationSuccessful("tejasborde99@gmail.com", "Tejas");
 
 module.exports = send;
