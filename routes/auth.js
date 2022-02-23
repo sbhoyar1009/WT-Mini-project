@@ -5,7 +5,6 @@ const express = require("express"),
   dotenv = require("dotenv"),
   User = require("../models/user"),
   axios = require("axios"),
-  querystring = require("querystring"),
   Admin = require("../models/admin"),
   passport = require("passport");
 
@@ -33,6 +32,7 @@ router.post("/register", async (req, res) => {
       contactNumber: userData.phone,
       country: userData.country,
       city: userData.city,
+      state: userData.state,
     });
     User.create(newUser, function (err, user) {
       if (err) {
@@ -42,30 +42,67 @@ router.post("/register", async (req, res) => {
         res.redirect("back");
       } else {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
-        const parameters = querystring.stringify(newUser);
+        // console.log(newUser);
+        const parameters = new URLSearchParams({
+          name: newUser.fullName,
+          email: newUser.email,
+          contactNumber: newUser.contactNumber ? newUser.contactNumber : "",
+          city: newUser.city ? newUser.city : "",
+          state: newUser.state ? newUser.state : "",
+          country: newUser.country ? newUser.country : "",
+        }).toString();
+        // console.log(parameters);
         axios
-          .get("http://localhost:9000/add-user-manually?" + parameters)
-          .then((res) => {
-            console.log(res.data.user);
+          .get(process.env.EVENT_URL + "/add-user-manually?" + parameters)
+          .then((r) => {
+            console.log(r.data);
+            if (
+              r.data.message.length != 0 &&
+              r.data.message[0] == "User added successfuly"
+            ) {
+              User.findOneAndUpdate(
+                { email: newUser.email },
+                { userRegisteredOnEventWebsite: true },
+                (err, u) => {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    console.log("User Added to event website successfully");
+                    //sendMail.registrationSuccessful(u.email, u.fullName);
+                    // console.log(
+                    //   "Successfully Registered, Login with your Credentials!!!"
+                    // );
+                    return res.render("post-registration", {
+                      status: "success",
+                      alreadyRegistered: false,
+                    });
+                  }
+                }
+              );
+            } else {
+              res.render("register");
+            }
           })
           .catch((err) => {
             console.error(err);
+            return res.render("register");
           });
-        // sendMail.registrationSuccessful(userData.email, userData.name);
-        console.log("Successfully Registered, Login with your Credentials!!!");
-        res.render("post-registration", {
-          status: "success",
-          alreadyRegistered: false,
-        });
       }
     });
   }
 });
 
 router.get("/add-user-manually", (req, res) => {
-  let name = req.query.name;
-  console.log(name);
-  res.send({ user: { name: name } });
+  console.log(req.query);
+  User.findOne({ email: req.query.email }, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else if (user) {
+      res.send({ message: ["User added successfuly"] });
+    } else {
+      res.send({ message: ["mail already exist"] });
+    }
+  });
 });
 router.get(
   "/auth/google",

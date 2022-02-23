@@ -81,6 +81,7 @@ input[type="password"] {
 
 .registration-form {
   padding: 4rem;
+  padding-bottom: 1rem;
 }
 
 .register-page .registration,
@@ -94,7 +95,7 @@ input[type="password"] {
 }
 
 .register-page .head-title {
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 
 .left-img {
@@ -302,34 +303,33 @@ input[type="password"] {
   animation: 0.3s linear 0.9s both fadeIn;
 }
 
-@media screen and (max-width:720px) {
-  .register-page .registration{
+@media screen and (max-width: 720px) {
+  .register-page .registration {
     display: block;
   }
-  .head-title{
+  .head-title {
     display: none;
   }
-  .left-img{
+  .left-img {
     display: block;
     width: 100% !important;
     text-align: center;
     padding: 2rem;
   }
-  .left-img img{
-      width: 80%;
+  .left-img img {
+    width: 80%;
   }
-  .google-auth{
-
-    padding:0 !important;
+  .google-auth {
+    padding: 0 !important;
     padding-top: 3rem !important;
   }
-  .post-registration-page .countdown .card{
+  .post-registration-page .countdown .card {
     width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
     max-width: 100% !important;
   }
-  .social-share .social-icons img{
+  .social-share .social-icons img {
     margin: 1.5rem 0.5rem;
   }
 }

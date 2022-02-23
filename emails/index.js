@@ -1,17 +1,17 @@
 const nodeMailer = require("nodemailer");
 
-const smtpTransport = nodeMailer.createTransport({
-  host: "hjph3hive",
-  port: 10025,
-});
+// const smtpTransport = nodeMailer.createTransport({
+//   host: "hjph3hive",
+//   port: 10025,
+// });
 
-smtpTransport.verify(function (error, success) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Server is ready to take our messages");
-  }
-});
+// smtpTransport.verify(function (error, success) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Server is ready to take our messages");
+//   }
+// });
 
 const send = {};
 
@@ -25,13 +25,13 @@ send.registrationSuccessful = (toMail, name) => {
 
   // console.log(mailOptions);
 
-  smtpTransport.sendMail(mailOptions, (error, response) => {
-    if (error) {
-      console.log(error);
-    } else {
-      // console.log("Message sent: " + response);
-    }
-  });
+  // smtpTransport.sendMail(mailOptions, (error, response) => {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     // console.log("Message sent: " + response);
+  //   }
+  // });
 };
 
 // sendMail.registrationSuccessful("tejasborde99@gmail.com", "Tejas");

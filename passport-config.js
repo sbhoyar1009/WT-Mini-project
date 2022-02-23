@@ -1,8 +1,8 @@
 const passport = require("passport"),
   GoogleStrategy = require("passport-google-oauth20").Strategy,
   // FacebookStrategy = require("passport-facebook").Strategy,
-  User = require("./models/user");
-
+  User = require("./models/user"),
+  axios = require("axios");
 const sendMail = require("./emails");
 
 module.exports = function (passport) {
@@ -31,17 +31,67 @@ module.exports = function (passport) {
             done(err, user);
           } else if (!user) {
             User.create(
-              { email: email.emails[0].value, fullName: email.displayName, registeredUsing : "Google" },
+              {
+                email: email.emails[0].value,
+                fullName: email.displayName,
+                registeredUsing: "Google",
+              },
               (err, user) => {
+                if (err) {
+                  // req.flash("error", "Something went wrong!!!");
+                  done(err, null);
+                } else {
+                  const parameters = new URLSearchParams({
+                    name: user.fullName,
+                    email: user.email,
+                  }).toString();
+
+                  axios
+                    .get(
+                      process.env.EVENT_URL + "/add-user-manually?" + parameters
+                    )
+                    .then((r) => {
+                      console.log(r.data);
+                      if (
+                        r.data.message.length != 0 &&
+                        r.data.message[0] == "User added successfuly"
+                      ) {
+                        User.findOneAndUpdate(
+                          { email: user.email },
+                          { userRegisteredOnEventWebsite: true },
+                          (err, u) => {
+                            if (err) {
+                              console.log(err);
+                            } else {
+                              console.log(
+                                "User Added to event website successfully"
+                              );
+                              //sendMail.registrationSuccessful(u.email, u.fullName);
+                              // console.log(
+                              //   "Successfully Registered, Login with your Credentials!!!"
+                              // );
+                              return done(err, user);
+                            }
+                          }
+                        );
+                      } else {
+                        return done(err, user);
+                      }
+                    })
+                    .catch((err) => {
+                      return done(err, null);
+                    });
+                }
+
                 // sendMail.registrationSuccessful(
                 //   email.emails[0].value,
                 //   email.displayName
                 // );
-                return done(err, user);
+                // return done(err, user);
               }
             );
           } else {
-            console.log("User already exist: ", user);
+            console.log("User already exist: ");
             return done(err, user);
           }
         });
