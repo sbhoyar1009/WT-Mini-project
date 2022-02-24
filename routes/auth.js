@@ -30,6 +30,7 @@ router.post("/register", async (req, res) => {
     res.render("post-registration", {
       status: "success",
       alreadyRegistered: true,
+      email : userExist.email
     });
     // return done(null,userExist);
   } else {
@@ -84,6 +85,7 @@ router.post("/register", async (req, res) => {
                     return res.render("post-registration", {
                       status: "success",
                       alreadyRegistered: false,
+                      email : newUser.email
                     });
                   }
                 }

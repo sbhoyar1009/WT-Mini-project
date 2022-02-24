@@ -40,6 +40,7 @@ const checkUser = async (req, res, next) => {
       res.render("post-registration", {
         status: "success",
         alreadyRegistered: true,
+        email : req.user.email.toLowerCase()
       });
     } else {
       next();
@@ -53,6 +54,8 @@ router.get("/registration/successful", checkUser, (req, res) => {
   res.render("post-registration", {
     status: "success",
     alreadyRegistered: false,
+    email : req.user.email.toLowerCase()
+
   });
 });
 
