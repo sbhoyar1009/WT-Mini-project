@@ -13,6 +13,7 @@ var userSchema = new mongoose.Schema({
   registeredOn: { type: Date, default: Date.now },
   userRegisteredOnEventWebsite: { type: Boolean, default: false },
   registeredUsing: { type: String, default: "Manual" },
+  registerAttempts: { type: Number, default: 1 },
 });
 
 userSchema.plugin(passportLocalMongoose);

@@ -11,15 +11,13 @@ dotenv.config();
 const isAdmin = (req, res, next) => {
   if (req.user) {
     console.log(req.user);
-    Admin.findOne({username:req.user.username},(err,user)=>{
-      if(err || !user || user==null){
-          return res.redirect("back");
-      }
-      else{
+    Admin.findOne({ username: req.user.username }, (err, user) => {
+      if (err || !user || user == null) {
+        return res.redirect("back");
+      } else {
         next();
       }
-    })
-
+    });
   } else {
     res.redirect("/admin");
   }
@@ -33,8 +31,29 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.get("/registration/successful", (req, res) => {
-  res.render("post-registration",{status:'success',alreadyRegistered:false});
+//middleware to check req.user
+const checkUser = async (req, res, next) => {
+  // console.log("User : ", req.user);
+  if (req.user) {
+    const user = await User.findOne({ email: req.user.email.toLowerCase() });
+    if (user.registerAttempts !== 1) {
+      res.render("post-registration", {
+        status: "success",
+        alreadyRegistered: true,
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+};
+
+router.get("/registration/successful", checkUser, (req, res) => {
+  res.render("post-registration", {
+    status: "success",
+    alreadyRegistered: false,
+  });
 });
 
 router.get("/admin", async (req, res) => {

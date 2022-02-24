@@ -89,7 +89,18 @@ module.exports = function (passport) {
                 }
               );
             } else {
-              console.log("User already exist: ");
+              console.log("User already exist: ", user.email);
+              User.findOneAndUpdate(
+                { email: user.email.toLowerCase() },
+                { registerAttempts: user.registerAttempts + 1 },
+                (e, userUpdated) => {
+                  if (e) {
+                    console.log(e);
+                  } else {
+                    console.log("User Updated");
+                  }
+                }
+              );
               return done(err, user);
             }
           }
