@@ -7,6 +7,7 @@ const express = require("express"),
   Admin = require("../models/admin"),
   passport = require("passport");
 
+const e = require("connect-flash");
 const sendMail = require("../emails");
 
 dotenv.config();
@@ -18,9 +19,17 @@ router.post("/register", async (req, res) => {
   let userExist = await User.findOne({ email: userData.email.toLowerCase() });
   if (userExist) {
     // req.flash("error", "User already exist");
+    User.findOneAndUpdate({email:userExist.email.toLowerCase()},{registerAttempts:userExist.registerAttempts+1},(err,userUpdated)=>{
+      if(e){
+        console.log(e);
+      }else{
+        console.log("User Updated");
+      }
+    })
     res.render("post-registration", {
       status: "success",
       alreadyRegistered: true,
+      email : userExist.email
     });
     // return done(null,userExist);
   } else {
@@ -32,6 +41,7 @@ router.post("/register", async (req, res) => {
       country: userData.country,
       city: userData.city,
       state: userData.state,
+      
     });
     User.create(newUser, function (err, user) {
       if (err) {
@@ -74,6 +84,7 @@ router.post("/register", async (req, res) => {
                     return res.render("post-registration", {
                       status: "success",
                       alreadyRegistered: false,
+                      email : newUser.email
                     });
                   }
                 }
