@@ -1,7 +1,6 @@
 const express = require("express"),
   router = express.Router({ mergeParams: true }),
   crypto = require("crypto"),
-  //   nodeMailer = require("nodemailer"),
   dotenv = require("dotenv"),
   User = require("../models/user"),
   axios = require("axios"),
@@ -80,12 +79,12 @@ router.post("/register", async (req, res) => {
                 }
               );
             } else {
-              res.render("register");
+              res.redirect("/register");
             }
           })
           .catch((err) => {
             console.error(err);
-            return res.render("register");
+            return res.redirect("/register");
           });
       }
     });
@@ -104,6 +103,7 @@ router.get("/add-user-manually", (req, res) => {
     }
   });
 });
+
 router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
