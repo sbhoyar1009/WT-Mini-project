@@ -10,7 +10,7 @@ dotenv.config();
 
 const isAdmin = (req, res, next) => {
   if (req.user) {
-    console.log(req.user);
+    // console.log(req.user);
     Admin.findOne({ username: req.user.username }, (err, user) => {
       if (err || !user || user == null) {
         return res.redirect("back");
@@ -55,7 +55,6 @@ router.get("/registration/successful", checkUser, (req, res) => {
     status: "success",
     alreadyRegistered: false,
     email : req.user.email.toLowerCase()
-
   });
 });
 

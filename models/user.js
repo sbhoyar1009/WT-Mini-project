@@ -4,6 +4,7 @@ const mongoose = require("mongoose"),
 // mongoose.set('useFindAndModify', false);
 
 var userSchema = new mongoose.Schema({
+  username: String,
   fullName: { type: String },
   email: { type: String },
   contactNumber: { type: String },

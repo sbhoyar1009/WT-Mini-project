@@ -34,14 +34,13 @@ router.post("/register", async (req, res) => {
     // return done(null,userExist);
   } else {
     let newUser = new User({
-      // username: userData.email,
+      username: userData.email.toLowerCase(),
       fullName: userData.name,
       email: userData.email.toLowerCase(),
       contactNumber: userData.phone,
       country: userData.country,
       city: userData.city,
       state: userData.state,
-      
     });
     User.create(newUser, function (err, user) {
       if (err) {
@@ -103,7 +102,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.get("/add-user-manually", (req, res) => {
-  console.log(req.query);
+  // console.log(req.query);
   User.findOne({ email: req.query.email }, (err, user) => {
     if (err) {
       console.log(err);

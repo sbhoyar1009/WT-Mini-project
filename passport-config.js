@@ -35,6 +35,7 @@ module.exports = function (passport) {
               User.create(
                 {
                   email: email.emails[0].value.toLowerCase(),
+                  username: email.emails[0].value.toLowerCase(),
                   fullName: email.displayName,
                   registeredUsing: "Google",
                 },
