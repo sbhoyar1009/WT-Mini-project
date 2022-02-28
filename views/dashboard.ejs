@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARKLE Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="users my-5">
+        <div class="stats">
+          <h1 class="text-center">Registered Users</h1>
+          <p class="my-3">
+            <strong>Total registrations: </strong><%= users.length %>
+            <span id="excel-rep" class="btn btn-export">Download report</span>
+          </p>
+        </div>
+        <table id="user-table" class="table table-dark table-hover sortable">
+          <thead>
+            <tr>
+              <th scope="col">Sr.No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Registered On</th>
+              <!-- <th scope="col">City</th>
+              <th scope="col">Country</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <% if(users.length > 0) { %> <% users.map((user, i) => { %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= user.fullName %></td>
+              <% if(user.email) { %>
+              <td><%= user.email %></td>
+              <% } else { %>
+              <td><%= user.username %></td>
+              <% } %>
+              <td>
+                <%= user.registeredOn.toLocaleDateString() %> <%=
+                user.registeredOn.toLocaleTimeString() %>
+              </td>
+            </tr>
+            <% }) %> <% } else { %>
+            <p>No users found</p>
+            <% } %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#excel-rep").click(function () {
+          let table = document.getElementsByTagName("table");
+          TableToExcel.convert(table[0], {
+            // html code may contain multiple tables so here we are refering to 1st table tag
+            name: `finale-registered-users.xlsx`, // fileName you could use any name
+            sheet: {
+              name: "Registered Users", // sheetName
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

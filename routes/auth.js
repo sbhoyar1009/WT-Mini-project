@@ -1,13 +1,14 @@
 const express = require("express"),
   router = express.Router({ mergeParams: true }),
   crypto = require("crypto"),
-  //   nodeMailer = require("nodemailer"),
   dotenv = require("dotenv"),
   User = require("../models/user"),
-  //   middleware = require("../middleware"),
+  axios = require("axios"),
+  Admin = require("../models/admin"),
   passport = require("passport");
 
-const sendMail = require('../emails');
+const e = require("connect-flash");
+const sendMail = require("../emails");
 
 dotenv.config();
 
@@ -15,19 +16,32 @@ router.post("/register", async (req, res) => {
   let userData = req.body.user;
   // console.log(req.body.user);
 
-  let userExist = await User.findOne({ email: userData.email });
+  let userExist = await User.findOne({ email: userData.email.toLowerCase() });
   if (userExist) {
     // req.flash("error", "User already exist");
-    console.log("Already Registered");
-    res.redirect("back");
+    User.findOneAndUpdate({email:userExist.email.toLowerCase()},{registerAttempts:userExist.registerAttempts+1},(err,userUpdated)=>{
+      if(e){
+        console.log(e);
+      }else{
+        console.log("User Updated");
+      }
+    })
+    res.render("post-registration", {
+      status: "success",
+      alreadyRegistered: true,
+      email : userExist.email
+    });
+    // return done(null,userExist);
   } else {
     let newUser = new User({
-      username: userData.email,
+      // username: userData.email,
       fullName: userData.name,
-      email: userData.email,
+      email: userData.email.toLowerCase(),
       contactNumber: userData.phone,
       country: userData.country,
       city: userData.city,
+      state: userData.state,
+      
     });
     User.create(newUser, function (err, user) {
       if (err) {
@@ -37,12 +51,68 @@ router.post("/register", async (req, res) => {
         res.redirect("back");
       } else {
         // req.flash("success", "Successfully Registered, Login with your Credentials!!!")
-        // sendMail.registrationSuccessful(userData.email, userData.name);
-        console.log("Successfully Registered, Login with your Credentials!!!");
-        res.redirect("/registration/successful");
+        // console.log(newUser);
+        const parameters = new URLSearchParams({
+          name: newUser.fullName,
+          email: newUser.email.toLowerCase(),
+          contactNumber: newUser.contactNumber ? newUser.contactNumber : "",
+          city: newUser.city ? newUser.city : "",
+          state: newUser.state ? newUser.state : "",
+          country: newUser.country ? newUser.country : "",
+        }).toString();
+        // console.log(parameters);
+        axios
+          .get(process.env.EVENT_URL + "/add-user-manually?" + parameters)
+          .then((r) => {
+            console.log(r.data);
+            if (
+              r.data.message.length != 0 &&
+              r.data.message[0] == "User added successfuly"
+            ) {
+              User.findOneAndUpdate(
+                { email: newUser.email.toLowerCase() },
+                { userRegisteredOnEventWebsite: true },
+                (err, u) => {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    console.log("User Added to event website successfully");
+                    //sendMail.registrationSuccessful(u.email.toLowerCase(), u.fullName);
+                    // console.log(
+                    //   "Successfully Registered, Login with your Credentials!!!"
+                    // );
+                    return res.render("post-registration", {
+                      status: "success",
+                      alreadyRegistered: false,
+                      email : newUser.email
+                    });
+                  }
+                }
+              );
+            } else {
+              res.redirect("/register");
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+            return res.redirect("/register");
+          });
       }
     });
   }
+});
+
+router.get("/add-user-manually", (req, res) => {
+  console.log(req.query);
+  User.findOne({ email: req.query.email }, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else if (user) {
+      res.send({ message: ["User added successfuly"] });
+    } else {
+      res.send({ message: ["mail already exist"] });
+    }
+  });
 });
 
 router.get(
@@ -56,7 +126,12 @@ router.get(
     successRedirect: "/registration/successful",
     failureRedirect: "/register",
   }),
-  (req, res) => {}
+  (req, res) => {
+    console.log("req.user", req.user);
+  }
+  // (req,res)=>{
+  //   res.render("post-registration",{status:"success",alreadyRegistered:false})
+  // }
 );
 
 // router.get(
@@ -76,6 +151,13 @@ router.get("/speaker-details", async (req, res) => {
   res.render("speaker-detail");
 });
 
+router.post("/admin/login", async (req, res) => {
+  passport.authenticate("local", {
+    successRedirect: "/admin/dashboard",
+    failureRedirect: "/admin",
+  })(req, res);
+});
+
 router.get("/users", async (req, res) => {
   await User.find({}, (err, users) => {
     if (err) {
@@ -85,5 +167,32 @@ router.get("/users", async (req, res) => {
     }
   });
 });
+
+const createAdmin = () => {
+  Admin.findOne({ username: "gauravvr77@gmail.com" }, (err, admin) => {
+    if (err) {
+      console.log(err);
+    } else if (!admin || admin === null) {
+      Admin.register(
+        {
+          username: "gauravvr77@gmail.com",
+          fullName: "Gaurav Rasal",
+        },
+        "Admin@123",
+        (err, admin) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("Admin Created");
+          }
+        }
+      );
+    } else {
+      console.log("Admin Already Exist");
+    }
+  });
+};
+
+// createAdmin();
 
 module.exports = router;

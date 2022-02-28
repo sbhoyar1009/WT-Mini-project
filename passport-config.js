@@ -1,8 +1,8 @@
 const passport = require("passport"),
   GoogleStrategy = require("passport-google-oauth20").Strategy,
   // FacebookStrategy = require("passport-facebook").Strategy,
-  User = require("./models/user");
-
+  User = require("./models/user"),
+  axios = require("axios");
 const sendMail = require("./emails");
 
 module.exports = function (passport) {
@@ -25,24 +25,86 @@ module.exports = function (passport) {
         callbackURL: "http://localhost:9000/auth/google/callback",
       },
       (accessToken, refreshToken, profile, email, done) => {
-  
-        User.findOne({ email: email.emails[0].value }, (err, user) => {
-          if (err) {
-            // req.flash("error", "Something went wrong!!!");
-            done(err, user);
-          } else if (!user) {
-            User.create(
-              { email: email.emails[0].value, fullName: email.displayName },
-              (err, user) => {
-                // sendMail.registrationSuccessful(email.emails[0].value, email.displayName);
-                return done(err, user);
-              }
-            );
-          } else {
-            console.log("User already exist: ", user);
-            return done(err, user);
+        User.findOne(
+          { email: email.emails[0].value.toLowerCase() },
+          (err, user) => {
+            if (err) {
+              // req.flash("error", "Something went wrong!!!");
+              done(err, user);
+            } else if (!user) {
+              User.create(
+                {
+                  email: email.emails[0].value.toLowerCase(),
+                  fullName: email.displayName,
+                  registeredUsing: "Google",
+                },
+                (err, user) => {
+                  if (err) {
+                    // req.flash("error", "Something went wrong!!!");
+                    done(err, null);
+                  } else {
+                    const parameters = new URLSearchParams({
+                      name: user.fullName,
+                      email: user.email.toLowerCase(),
+                    }).toString();
+
+                    axios
+                      .get(
+                        process.env.EVENT_URL +
+                          "/add-user-manually?" +
+                          parameters
+                      )
+                      .then((r) => {
+                        console.log(r.data);
+                        if (
+                          r.data.message.length != 0 &&
+                          r.data.message[0] == "User added successfuly"
+                        ) {
+                          User.findOneAndUpdate(
+                            { email: user.email.toLowerCase() },
+                            { userRegisteredOnEventWebsite: true },
+                            (err, u) => {
+                              if (err) {
+                                console.log(err);
+                              } else {
+                                console.log(
+                                  "User Added to event website successfully"
+                                );
+                                //sendMail.registrationSuccessful(u.email, u.fullName);
+                                // console.log(
+                                //   "Successfully Registered, Login with your Credentials!!!"
+                                // );
+                                return done(err, user);
+                              }
+                            }
+                          );
+                        } else {
+                          return done(err, user);
+                        }
+                      })
+                      .catch((err) => {
+                        return done(err, null);
+                      });
+                  }
+                }
+              );
+            } else {
+              console.log("User already exist: ", user.email);
+              User.findOneAndUpdate(
+                { email: user.email.toLowerCase() },
+                { registerAttempts: user.registerAttempts + 1 },
+                (e, userUpdated) => {
+                  if (e) {
+                    console.log(e);
+                  } else {
+                    console.log("User Updated");
+                  }
+                }
+              );
+              return done(err, user);
+            }
           }
-        });
+        );
       }
     )
   );
@@ -62,7 +124,6 @@ module.exports = function (passport) {
 //         if (err) throw err;
 //         if (!err && user != null) return done(null, user);
 
-       
 //         var user = new User({
 //           provider_id: profile.id,
 //           provider: profile.provider,
