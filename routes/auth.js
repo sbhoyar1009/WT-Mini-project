@@ -5,12 +5,31 @@ const express = require("express"),
   User = require("../models/user"),
   axios = require("axios"),
   Admin = require("../models/admin"),
+  Speaker = require("../models/speaker"),
   passport = require("passport");
 
 const e = require("connect-flash");
 const sendMail = require("../emails");
 
 dotenv.config();
+
+
+router.post("/speaker", async (req, res) => {
+  let speaker = req.body;
+  console.log(req);
+  console.log(speaker);
+  let new_speaker = new Speaker(speaker);
+//   new_speaker.save(function(err,result){
+//     if (err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log(result)
+//     }
+// })
+})
+
+
 
 router.post("/register", async (req, res) => {
   let userData = req.body.user;
