@@ -166,7 +166,7 @@ h4 {
 }
 
 .top-nav-collapse .navbar-brand {
-  background: #212121;
+  /* background: #212121; */
 }
 
 /* TOP */
@@ -879,4 +879,10 @@ select {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.footer{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
