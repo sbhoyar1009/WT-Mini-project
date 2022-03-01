@@ -883,13 +883,9 @@ select {
 
 .footer{
   padding: 10px;
+  text-align: center;
 }
-.footer img{
-  height: 30%;
-  width: 30%;
-  margin: 0 !important;
-  margin-left: 2rem;
-}
+
 
 @media screen and (max-width:1000px){
   #days .item{
