@@ -882,7 +882,14 @@ select {
 }
 
 .footer{
-  margin: auto;
-  width: 50%;
   padding: 10px;
+  text-align: center;
+}
+
+
+@media screen and (max-width:1000px){
+  #days .item{
+    word-wrap: break-word;
+  }
+  
 }

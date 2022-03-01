@@ -95,10 +95,8 @@ router.post("/register", async (req, res) => {
                     console.log(err);
                   } else {
                     console.log("User Added to event website successfully");
-                    //sendMail.registrationSuccessful(u.email.toLowerCase(), u.fullName);
-                    // console.log(
-                    //   "Successfully Registered, Login with your Credentials!!!"
-                    // );
+                   sendMail.registrationSuccessful(u.email.toLowerCase(), u.fullName);
+                    // console.log("Successfully Registered, Login with your Credentials!!!");
                     return res.render("post-registration", {
                       status: "success",
                       alreadyRegistered: false,
@@ -187,16 +185,16 @@ router.get("/users", async (req, res) => {
 });
 
 const createAdmin = () => {
-  Admin.findOne({ username: "gauravvr77@gmail.com" }, (err, admin) => {
+  Admin.findOne({ username: "sparkle.kpit.com" }, (err, admin) => {
     if (err) {
       console.log(err);
     } else if (!admin || admin === null) {
       Admin.register(
         {
-          username: "gauravvr77@gmail.com",
-          fullName: "Gaurav Rasal",
+          username: "sparkle.kpit.com",
+          fullName: "Sparkle Admin",
         },
-        "Admin@123",
+        "87654321",
         (err, admin) => {
           if (err) {
             console.log(err);
@@ -211,6 +209,6 @@ const createAdmin = () => {
   });
 };
 
-// createAdmin();
+ //createAdmin();
 
 module.exports = router;

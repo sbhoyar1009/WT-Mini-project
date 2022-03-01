@@ -4,7 +4,7 @@ const mongoose = require("mongoose"),
 // mongoose.set('useFindAndModify', false);
 
 var userSchema = new mongoose.Schema({
-  username: String,
+  username:{type: String },
   fullName: { type: String },
   email: { type: String },
   contactNumber: { type: String },
@@ -17,6 +17,6 @@ var userSchema = new mongoose.Schema({
   registerAttempts: { type: Number, default: 1 },
 });
 
-userSchema.plugin(passportLocalMongoose);
+// userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", userSchema);
