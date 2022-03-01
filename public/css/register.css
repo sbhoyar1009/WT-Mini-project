@@ -333,3 +333,11 @@ input[type="password"] {
     margin: 1.5rem 0.5rem;
   }
 }
+.notfound{
+  margin-top: 5rem;
+}
+.notfound img{
+  height : 50%;
+  width: 50%;
+
+}
