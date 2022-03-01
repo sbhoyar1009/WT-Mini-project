@@ -69,8 +69,6 @@ router.get("/admin/dashboard", isAdmin, async (req, res) => {
   });
 });
 
-router.get('*', function(req, res){
-  res.render("notfound");
-});
+
 
 module.exports = router;
