@@ -29,10 +29,12 @@ send.registrationSuccessful = (toMail, name) => {
   <div style="background: #212121; color: #f7f7f7 !important; padding: 2rem">
     <p>Hello ${name},</p>
     <p>
-      Congratulations!, You have successfully registered for KPIT Sparkle 2022 Grand Finale.
+   <strong> CONGRATULATIONS! </strong>
       </p>
-      <p>The event is scheduled from 22nd March 2022 to 26th March 2022.</p>
-	  <p> The event will be live <a href="https://kpitsparklegrandfinale.com/"> here </a> from 22rd March onwards. </p>
+	<p>You've officially bagged an exclusive spot for the 4 days long virtual Grand Finale.
+	We have planned some inspiring tech and knowledge talks and also exciting chats with the who's who of the industry, especially to motivate you.
+	</p>
+	<p> So keep an eye on your mailbox. The KPIT Sparkle Grand Finale is coming soon!! </p><br>
     <p>Regards,</p>
     <p>Team KPIT Sparkle</p>
   </div>
