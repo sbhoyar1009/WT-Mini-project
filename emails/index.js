@@ -32,7 +32,7 @@ send.registrationSuccessful = (toMail, name) => {
       Congratulations!, You have successfully registered for KPIT Sparkle 2022 Grand Finale.
       </p>
       <p>The event is scheduled from 22nd March 2022 to 26th March 2022.</p>
-	  <p> The event will be live <a href="https://kpitsparklegrandfinale.com/login_with_portal?email=${toMail}"> here </a> from 22rd March onwards. </p>
+	  <p> The event will be live <a href="https://kpitsparklegrandfinale.com/"> here </a> from 22rd March onwards. </p>
     <p>Regards,</p>
     <p>Team KPIT Sparkle</p>
   </div>
