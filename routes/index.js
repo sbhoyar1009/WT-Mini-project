@@ -10,7 +10,7 @@ dotenv.config();
 
 const isAdmin = (req, res, next) => {
   if (req.user) {
-    console.log(req.user);
+    //console.log(req.user);
     Admin.findOne({ username: req.user.username }, (err, user) => {
       if (err || !user || user == null) {
         return res.redirect("back");
@@ -46,7 +46,7 @@ const checkUser = async (req, res, next) => {
       next();
     }
   } else {
-    next();
+    res.redirect('register');
   }
 };
 

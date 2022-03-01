@@ -6,13 +6,11 @@ const passport = require("passport"),
 const sendMail = require("./emails");
 
 module.exports = function (passport) {
-  // Serializa al usuario para almacenarlo en la sesión
+  
   passport.serializeUser(function (user, done) {
     done(null, user);
   });
 
-  // Deserializa el objeto usuario almacenado en la sesión para
-  // poder utilizarlo
   passport.deserializeUser(function (obj, done) {
     done(null, obj);
   });
@@ -22,7 +20,7 @@ module.exports = function (passport) {
       {
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: "http://localhost:9000/auth/google/callback",
+        callbackURL: "https://sparklegrandfinale.kpit.com/auth/google/callback",
       },
       (accessToken, refreshToken, profile, email, done) => {
         User.findOne(
@@ -33,19 +31,20 @@ module.exports = function (passport) {
               done(err, user);
             } else if (!user) {
               User.create(
-                {
+                { 
+				  username : email.emails[0].value.toLowerCase(),
                   email: email.emails[0].value.toLowerCase(),
                   fullName: email.displayName,
                   registeredUsing: "Google",
                 },
-                (err, user) => {
+                (err, createdUser) => {
                   if (err) {
                     // req.flash("error", "Something went wrong!!!");
                     done(err, null);
                   } else {
                     const parameters = new URLSearchParams({
-                      name: user.fullName,
-                      email: user.email.toLowerCase(),
+                      name: createdUser.fullName,
+                      email: createdUser.email.toLowerCase(),
                     }).toString();
 
                     axios
@@ -61,7 +60,7 @@ module.exports = function (passport) {
                           r.data.message[0] == "User added successfuly"
                         ) {
                           User.findOneAndUpdate(
-                            { email: user.email.toLowerCase() },
+                            { email: createdUser.email.toLowerCase() },
                             { userRegisteredOnEventWebsite: true },
                             (err, u) => {
                               if (err) {
@@ -70,11 +69,9 @@ module.exports = function (passport) {
                                 console.log(
                                   "User Added to event website successfully"
                                 );
-                                //sendMail.registrationSuccessful(u.email, u.fullName);
-                                // console.log(
-                                //   "Successfully Registered, Login with your Credentials!!!"
-                                // );
-                                return done(err, user);
+                                sendMail.registrationSuccessful(u.email, u.fullName);
+                                console.log("Successfully Registered, Login with your Credentials!!!");
+                                return done(err, createdUser);
                               }
                             }
                           );
