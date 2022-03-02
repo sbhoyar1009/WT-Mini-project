@@ -24,12 +24,34 @@ const isAdmin = (req, res, next) => {
   }
 };
 
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/", async (req, res) => {
+  Speaker.find({}, (err, speakers) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("index", {
+        speakers: speakers,
+      });
+    }
+  });
 });
 
 router.get("/register", (req, res) => {
   res.render("register");
+});
+
+router.get("/speaker-details/:speakerID", async (req, res) => {
+  // console.log("Speaker ID : ", req.params.speakerID);
+  Speaker.findById(req.params.speakerID, async (err, speaker) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // console.log("Speaker : ", speaker);
+      res.render("speaker-detail", {
+        speaker: speaker,
+      });
+    }
+  });
 });
 
 //middleware to check req.user
@@ -84,6 +106,9 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/98919984119?pwd=QUJ1QnkxQ0dTYW5BWkpuYldGU3YzZz09",
       status: true,
+      linkedin:
+        "https://www.linkedin.com/in/ACoAAAlocgYBm1zJYqV3HebX-9eTOKbJZn5BDuA/",
+      image: "/img/speakers/Lalit-Arora.png",
     },
     {
       speakerName: "Pradeep Chandrashekaran",
@@ -96,20 +121,35 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/9684334266?pwd=bnJQY0ZEQmdBNmJNV08wZk5jZUVUQT09",
       status: true,
+      linkedin: "https://www.linkedin.com/in/chandrasekaran-pradeep-344b0635/",
+      image: "/img/speakers/Abhilash-Sk.png",
     },
     {
-      speakerName: "AbhilashS K & Santhana Raj",
+      speakerName: "Abhilash K",
       companyName: "Pathpartner",
-      emailID:
-        "abhilash.sk@pathpartnertech.com, santhana.raj@pathpartnertech.com",
-      designation:
-        "Abhilash - Technical Lead\nPathPartner Technology, Santhana Raj - Technical Architect\nPathPartner Technology",
-      topicName:
-        "Abhilash - AI based Pedestrian Analytics for Autonomous Vehicles, Santhana Raj - Automotive Radar Technology assisting in next level of Autonomous Driving\n\n",
+      emailID: "abhilash.sk@pathpartnertech.com",
+      designation: "Technical Lead PathPartner Technology",
+      topicName: "AI based Pedestrian Analytics for Autonomous Vehicles",
       Date: "Thursday, 24th FEB from 2PM - 4 PM",
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
       status: true,
+      linkedin: "https://www.linkedin.com/in/abhilash-sk-83294218",
+      image: "/img/speakers/Abhilash-Sk.png",
+    },
+    {
+      speakerName: "Santhana Raj",
+      companyName: "Pathpartner",
+      emailID: "santhana.raj@pathpartnertech.com",
+      designation: "Technical Architect PathPartner Technology",
+      topicName:
+        "Automotive Radar Technology assisting in next level of Autonomous Driving\n\n",
+      Date: "Thursday, 24th FEB from 2PM - 4 PM",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
+      status: true,
+      facebook: "https://www.facebook.com/santhana.raj.35",
+      image: "/img/speakers/Santhana-Raj.png",
     },
     {
       speakerName: "Nakul H. Navarange",
@@ -122,6 +162,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: false,
+      linkedin: "https://www.linkedin.com/in/nakulnavarange/",
+      image: "/img/speakers/Nakul-Navarange.png",
     },
     {
       speakerName: "Shobhit Shrotriya",
@@ -134,6 +176,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/98636716412?pwd=em1HL05JOVF1Z2xzOVdtRTQxaDRtdz09",
       status: false,
+      linkedin: "https://www.linkedin.com/in/shobhit-shrotriya-1162261/",
+      image: "/img/spekears/Shobhit-Shrotriya.png",
     },
     {
       speakerName: "Rakesh Mehta",
@@ -146,6 +190,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/98709701662?pwd=RHRUdElpWElERkhDeG9qN3FpRnF6dz09",
       status: true,
+      linkedin: "https://www.linkedin.com/in/rakesh-mehta-b9a8b9b5/",
+      image: "/img/spekears/Rakesh-Mehta.png",
     },
     {
       speakerName: "Raghu Muttige",
@@ -157,6 +203,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/95346740413?pwd=VnhFR20yd3dUcXR0cmRRNkpGZGtsQT09",
       status: true,
+      linkedin: "https://www.linkedin.com/in/raghu-muttige-b1886219/",
+      image: "/img/speakers/Raghu-Muttige.png",
     },
     {
       speakerName: "Omkar Panse",
@@ -168,18 +216,21 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/92192459936?pwd=a0J2TWRwU3duaG5GaGZLbWNUdFVqQT09",
       status: false,
+      facebook: "https://www.facebook.com/omkar.panse",
+      linkedin: "https://www.linkedin.com/in/omkar-panse/",
+      image: "/img/speaker1.png",
     },
-    {
-      speakerName: "TBD",
-      companyName: "Thermax",
-      emailID: "",
-      designation: "",
-      topicName: "Carbon Footprint",
-      Date: "",
-      modeOfRecording: "",
-      link: "",
-      status: false,
-    },
+    // {
+    //   speakerName: "TBD",
+    //   companyName: "Thermax",
+    //   emailID: "",
+    //   designation: "",
+    //   topicName: "Carbon Footprint",
+    //   Date: "",
+    //   modeOfRecording: "",
+    //   link: "",
+    //   status: false,
+    // },
     {
       speakerName: "Dr. R. Saravanan",
       companyName: "Anna University",
@@ -190,6 +241,9 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "https://ov-live-in.zoom.us/j/93539935936?pwd=RzZ1cktzOTdFakkwN3RVU0h1eVZhQT09",
       status: false,
+      twitter: "https://twitter.com/drnsaravanan2",
+      linkedin: "https://www.linkedin.com/in/saravanan-d-9b5645100",
+      image: "/img/speakers/Dr-R-Saravanan.png",
     },
     {
       speakerName: "Mr. S. Venkatramani",
@@ -201,18 +255,20 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "https://ov-live-in.zoom.us/j/96173539731?pwd=YnBORll1RVppSE5YR0p4emRNUndVQT09",
       status: true,
+      linkedin: "https://www.linkedin.com/in/gopinath-venkataramani-11aa7381",
+      image: "/img/speakers/Subramanian-Venkatramani.png",
     },
-    {
-      speakerName: "Himanshu Jain",
-      companyName: "Salient Process",
-      emailID: "himanshu12221@gmail.com",
-      designation: "",
-      topicName: "Quantum computing",
-      Date: "",
-      modeOfRecording: "",
-      link: "",
-      status: false,
-    },
+    // {
+    //   speakerName: "Himanshu Jain",
+    //   companyName: "Salient Process",
+    //   emailID: "himanshu12221@gmail.com",
+    //   designation: "",
+    //   topicName: "Quantum computing",
+    //   Date: "",
+    //   modeOfRecording: "",
+    //   link: "",
+    //   status: false,
+    // },
     {
       speakerName: "Nikhil Devshatwar",
       companyName: "Texas Instruments",
@@ -223,6 +279,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "https://ov-live-in.zoom.us/j/93674370041?pwd=bXptb0MyUG9YSHM3dlNYeXBUMjNPdz09",
       status: false,
+      linkedin: "https://www.linkedin.com/in/nikhildevshatwar/",
+      image: "/img/speakers/Nikhil-Devshatwar.png",
     },
     {
       speakerName: "Dr Victor Fey",
@@ -234,6 +292,8 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: true,
+      linkedin: "https://www.linkedin.com/in/victorfey/",
+      image: "/img/speakers/Victor-Fey.png",
     },
     {
       speakerName: "Dr Rama Kumar",
@@ -245,6 +305,7 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: false,
+      image: "/img/speakers1.png",
     },
     {
       speakerName: "Dr Shaver",
@@ -256,6 +317,9 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: false,
+      twitter: "https://twitter.com/G_Shaver_Purdue",
+      linkedin: "https://www.linkedin.com/in/greg-shaver-7246a12/",
+      image: "/img/speakers/Abhay-Jere.png",
     },
     {
       speakerName: "Dr Anita Gupta",
@@ -267,6 +331,9 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "Zoom",
       link: "https://ov-live-in.zoom.us/j/93658180878?pwd=RC8yK0N4cUtQdURzZmVmS3A4WlVCdz09",
       status: false,
+      twitter: "https://twitter.com/anitadst16",
+      linkedin: "https://www.linkedin.com/in/dr-anita-gupta-a04b609",
+      image: "/img/speakers/Dr.-Anita-Gupta.png",
     },
     {
       speakerName: "Dr Ravindrasingh Pardeshi",
@@ -278,6 +345,7 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: false,
+      image: "/img/speaker1.png",
     },
     {
       speakerName: "Dr Abhay Jere",
@@ -289,6 +357,10 @@ router.post("/createspeaker", async (req, res) => {
       modeOfRecording: "",
       link: "",
       status: false,
+      facebook: "https://www.facebook.com/abhay.jere.7",
+      twitter: "https://twitter.com/abhayjere",
+      linkedin: "https://www.linkedin.com/in/abhay-jere-84b73416/",
+      image: "/img/speakers/Abhay-Jere.png",
     },
   ];
   speakers.forEach(async (speaker) => {
@@ -300,16 +372,16 @@ router.post("/createspeaker", async (req, res) => {
   res.send("Speakers added successfully");
 });
 
-router.post("/temp-post", (req, res) => {
-  try {
-    req.body = JSON.parse(Object.keys(req.body)[0]);
-    console.log("req.body : ", req.body);
-  } catch (err) {
-    req.body = req.body;
-    console.log("req.body : ", req.body);
-  }
-  res.send("success");
-});
+// router.post("/temp-post", (req, res) => {
+//   try {
+//     req.body = JSON.parse(Object.keys(req.body)[0]);
+//     console.log("req.body : ", req.body);
+//   } catch (err) {
+//     req.body = req.body;
+//     console.log("req.body : ", req.body);
+//   }
+//   res.send("success");
+// });
 
 router.get("*", function (req, res) {
   res.render("notfound");

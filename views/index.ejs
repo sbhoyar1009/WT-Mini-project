@@ -189,212 +189,33 @@
             <br>
             <div class="row">
               <!-- speaker 1 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
+              <% speakers.forEach(function(speaker) { %>
+                <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
                 <figure>
-                  <img class="img-responsive" src="img/speaker1.png" alt="" />
+                  <img class="img-responsive" src="<%= speaker.image %>" alt="<%= speaker.speakerName %>" />
+                  <!-- <img class="img-responsive" src="/img/speaker3.png" alt="<%= speaker.speakerName %>" /> -->
                   <figcaption>
-                    <h4>Bryan Spencer</h4>
+                    <h4><%= speaker.speakerName %></h4>
                     <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
+                      <%= speaker.designation %>
                     </p>
-                    <a class="speaker-detail" href="/speaker-details"
+                    <a class="speaker-detail" href="/speaker-details/<%= speaker.id %>"
                       ><i class="fa fa-2x fa-external-link"></i
                     ></a>
                     <div class="social">
-                      <a href="#"
+                      <a href="<%= speaker.facebook %>"
                         ><i class="fa fa-2x fa-facebook-square"></i
                       ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                      <a href="<%= speaker.twitter %>"><i class="fa fa-2x fa-twitter-square"></i></a>
+                      <a href="<%= speaker.linkedin %>"><i class="fa fa-2x fa-linkedin-square"></i></a>
                     </div>
                   </figcaption>
                 </figure>
 
-                <h4>Bryan Spencer</h4>
-                <span class="title">Interdum Co.</span>
+                <h4><%= speaker.speakerName %></h4>
+                <!-- <span class="title"><%= speaker.designation %></span> -->
               </div>
-
-              <!-- speaker 2 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker2.png" alt="" />
-                  <figcaption>
-                    <h4>Susan Robertson</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Susan Robertson</h4>
-                <span class="title">Sollicitudin.com</span>
-              </div>
-
-              <!-- speaker 3 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker3.png" alt="" />
-                  <figcaption>
-                    <h4>Joann Foster</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Joann Foster</h4>
-                <span class="title">Founder, PULV</span>
-              </div>
-
-              <!-- speaker 4 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker4.png" alt="" />
-                  <figcaption>
-                    <h4>Leo Davis</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Leo Davis</h4>
-                <span class="title">fermentum.net</span>
-              </div>
-
-              <!-- speaker 5 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker5.png" alt="" />
-                  <figcaption>
-                    <h4>Jayden Hawkins</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Jayden Hawkins</h4>
-                <span class="title">Faucibus Co.</span>
-              </div>
-
-              <!-- speaker 6 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker6.png" alt="" />
-                  <figcaption>
-                    <h4>Danielle Grant</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Danielle Grant</h4>
-                <span class="title">Etiam</span>
-              </div>
-
-              <!-- speaker 7 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker7.png" alt="" />
-                  <figcaption>
-                    <h4>Ruben Bennett</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Ruben Bennett</h4>
-                <span class="title">Lobortis Lab</span>
-              </div>
-
-              <!-- speaker 8 -->
-              <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <figure>
-                  <img class="img-responsive" src="img/speaker8.png" alt="" />
-                  <figcaption>
-                    <h4>Jennifer Berry</h4>
-                    <p>
-                      Aliquam ut laoreet velit. Proin orci est, vulputate
-                      aliquam eu, tincidunt laoreet lorem.
-                    </p>
-                    <a class="speaker-detail" href="/speaker-details"
-                      ><i class="fa fa-2x fa-external-link"></i
-                    ></a>
-                    <div class="social">
-                      <a href="#"
-                        ><i class="fa fa-2x fa-facebook-square"></i
-                      ></a>
-                      <a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    </div>
-                  </figcaption>
-                </figure>
-
-                <h4>Jennifer Berry</h4>
-                <span class="title">Commodo Apps</span>
-              </div>
+              <% }); %>
             </div>
           </div>
         </div>

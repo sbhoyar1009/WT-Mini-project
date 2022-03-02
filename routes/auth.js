@@ -14,20 +14,20 @@ const sendMail = require("../emails");
 dotenv.config();
 
 
-router.post("/speaker", async (req, res) => {
-  let speaker = req.body;
-  console.log(req);
-  console.log(speaker);
-  let new_speaker = new Speaker(speaker);
-//   new_speaker.save(function(err,result){
-//     if (err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log(result)
-//     }
+// router.post("/speaker", async (req, res) => {
+//   let speaker = req.body;
+//   console.log(req);
+//   console.log(speaker);
+//   let new_speaker = new Speaker(speaker);
+// //   new_speaker.save(function(err,result){
+// //     if (err){
+// //         console.log(err);
+// //     }
+// //     else{
+// //         console.log(result)
+// //     }
+// // })
 // })
-})
 
 
 
@@ -163,9 +163,6 @@ router.get(
 //   })
 // );
 
-router.get("/speaker-details", async (req, res) => {
-  res.render("speaker-detail");
-});
 
 router.post("/admin/login", async (req, res) => {
   passport.authenticate("local", {
