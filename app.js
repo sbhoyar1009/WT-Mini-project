@@ -60,9 +60,11 @@ app.use(function (req, res, next) {
 
 app.use(mainRoutes);
 app.use(authRoutes);
-app.get('*', function(req, res){
-  res.send('notfound', 404);
+
+app.get("*", function (req, res) {
+  res.send("notfound", 404);
 });
+
 app.listen(process.env.PORT || 9000, function () {
   console.log("The Server is Listening!!!");
 });
