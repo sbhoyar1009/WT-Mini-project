@@ -14,20 +14,20 @@ const sendMail = require("../emails");
 dotenv.config();
 
 
-router.post("/speaker", async (req, res) => {
-  let speaker = req.body;
-  console.log(req);
-  console.log(speaker);
-  let new_speaker = new Speaker(speaker);
-//   new_speaker.save(function(err,result){
-//     if (err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log(result)
-//     }
+// router.post("/speaker", async (req, res) => {
+//   let speaker = req.body;
+//   console.log(req);
+//   console.log(speaker);
+//   let new_speaker = new Speaker(speaker);
+// //   new_speaker.save(function(err,result){
+// //     if (err){
+// //         console.log(err);
+// //     }
+// //     else{
+// //         console.log(result)
+// //     }
+// // })
 // })
-})
 
 
 
@@ -60,7 +60,6 @@ router.post("/register", async (req, res) => {
       country: userData.country,
       city: userData.city,
       state: userData.state,
-      
     });
     User.create(newUser, function (err, user) {
       if (err) {
@@ -120,7 +119,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.get("/add-user-manually", (req, res) => {
-  console.log(req.query);
+  // console.log(req.query);
   User.findOne({ email: req.query.email }, (err, user) => {
     if (err) {
       console.log(err);
@@ -164,9 +163,6 @@ router.get(
 //   })
 // );
 
-router.get("/speaker-details", async (req, res) => {
-  res.render("speaker-detail");
-});
 
 router.post("/admin/login", async (req, res) => {
   passport.authenticate("local", {
