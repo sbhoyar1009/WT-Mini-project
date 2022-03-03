@@ -1,0 +1,293 @@
+[{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7da"
+  },
+  "speakerName": "Lalit Arora",
+  "companyName": "Tata Communications",
+  "emailID": "Lalit.Arora1@tatacommunications.com",
+  "designation": "India Head – Client Relationships, Connected Automotive Solutions\nTata Communications ",
+  "Date": "14th FEB -  2 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/98919984119?pwd=QUJ1QnkxQ0dTYW5BWkpuYldGU3YzZz09",
+  "topicName": "Data, Platforms and Connectivity - Aligning Mobility with the needs of Connected Vehcile Programs\n",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/ACoAAAlocgYBm1zJYqV3HebX-9eTOKbJZn5BDuA/",
+  "image": "/img/speakers/Lalit-Arora.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7db"
+  },
+  "speakerName": "P. Chandrashekaran",
+  "companyName": "Ola Electric",
+  "emailID": "pradeep.c1@olaelectric.com",
+  "designation": "Associate Director - Vehicle Engineering , OLA Electric Technologies Pvt Ltd.",
+  "Date": "20th Feb:\n12PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/9684334266?pwd=bnJQY0ZEQmdBNmJNV08wZk5jZUVUQT09",
+  "topicName": "Fuel Cell Solutions for Transportation - Future Mobility\n",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/chandrasekaran-pradeep-344b0635/",
+  "image": "/img/speakers/Abhilash-Sk.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7dd"
+  },
+  "speakerName": "Santhana Raj",
+  "companyName": "Pathpartner",
+  "emailID": "santhana.raj@pathpartnertech.com",
+  "designation": "Technical Architect PathPartner Technology",
+  "Date": "Thursday, 24th FEB from 2PM - 4 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
+  "topicName": "Automotive Radar Technology assisting in next level of Autonomous Driving\n\n",
+  "status": true,
+  "facebook": "https://www.facebook.com/santhana.raj.35",
+  "image": "/img/speakers/Santhana-Raj.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7dc"
+  },
+  "speakerName": "Abhilash K",
+  "companyName": "Pathpartner",
+  "emailID": "abhilash.sk@pathpartnertech.com",
+  "designation": "Technical Lead PathPartner Technology",
+  "Date": "Thursday, 24th FEB from 2PM - 4 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
+  "topicName": "AI based Pedestrian Analytics for Autonomous Vehicles",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/abhilash-sk-83294218",
+  "image": "/img/speakers/Abhilash-Sk.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7de"
+  },
+  "speakerName": "Nakul H. Navarange",
+  "companyName": "Qualcomm Technologies, Inc.",
+  "emailID": "nakuln@qti.qualcomm.com",
+  "designation": "Staff Systems Engineer, 5G Networks, Qualcomm Technologies, Inc",
+  "Date": "28th FEB - SELF",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "First Look at 5G (To be confirmed soon)",
+  "status": false,
+  "linkedin": "https://www.linkedin.com/in/nakulnavarange/",
+  "image": "/img/speakers/Nakul-Navarange.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e0"
+  },
+  "speakerName": "Rakesh Mehta",
+  "companyName": "",
+  "emailID": "rakesh.mehta57@gmail.com",
+  "designation": "Serial Entrepreneur, Indian Defence & Space Design Expert, Ex Founder Director, Bit Mapper Technologies",
+  "Date": "16th FEB - 3.30 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/98709701662?pwd=RHRUdElpWElERkhDeG9qN3FpRnF6dz09",
+  "topicName": "Semiconductor Design Opportunities in India\n",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/rakesh-mehta-b9a8b9b5/",
+  "image": "/img/speakers/Rakesh-Mehta.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e2"
+  },
+  "speakerName": "Omkar Panse",
+  "companyName": "KPIT Technologies",
+  "emailID": "dirced@annauniv.edu | omkar.panse@kpit.com",
+  "designation": "",
+  "Date": "5th March, Saturday 11:30 am",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/92192459936?pwd=a0J2TWRwU3duaG5GaGZLbWNUdFVqQT09",
+  "topicName": "",
+  "status": false,
+  "facebook": "https://www.facebook.com/omkar.panse",
+  "linkedin": "https://www.linkedin.com/in/omkar-panse/",
+  "image": "/img/speaker1.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e1"
+  },
+  "speakerName": "Raghu Muttige",
+  "companyName": "Dana",
+  "emailID": "Raghu.Muttige@dana.com",
+  "designation": "Managing Director - Dana India Technical Center (DITC)",
+  "Date": "Tuesday, 22nd February 2022 \nTime: 11 AM IST\n",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/95346740413?pwd=VnhFR20yd3dUcXR0cmRRNkpGZGtsQT09",
+  "topicName": "Clock Speed in Mobility Industry",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/raghu-muttige-b1886219/",
+  "image": "/img/speakers/Raghu-Muttige.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7df"
+  },
+  "speakerName": "Shobhit Shrotriya",
+  "companyName": "Accenture",
+  "emailID": "shobhit.shrotriya@accenture.com",
+  "designation": "Managing Director – Global Life Sciences R&D Operations, Accenture Life Sciences R&D Operations",
+  "Date": "28th FEB 4 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/98636716412?pwd=em1HL05JOVF1Z2xzOVdtRTQxaDRtdz09",
+  "topicName": "The Journey to Intelligent Innovation\n",
+  "status": false,
+  "linkedin": "https://www.linkedin.com/in/shobhit-shrotriya-1162261/",
+  "image": "/img/speakers/Shobhit-Shrotriya.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e4"
+  },
+  "speakerName": "Mr. S. Venkatramani",
+  "companyName": "Ex Siemens GM",
+  "emailID": "s.venkatramani47@gmail.com",
+  "designation": "",
+  "Date": "27th March 12 PM",
+  "modeOfRecording": "",
+  "link": "https://ov-live-in.zoom.us/j/96173539731?pwd=YnBORll1RVppSE5YR0p4emRNUndVQT09",
+  "topicName": "Evolutions of Solid State devices from vaccum tunes to IGBT",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/gopinath-venkataramani-11aa7381",
+  "image": "/img/speakers/Subramanian-Venkatramani.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e5"
+  },
+  "speakerName": "Nikhil Devshatwar",
+  "companyName": "Texas Instruments",
+  "emailID": "nikhildevshatwar@gmail.com",
+  "designation": "",
+  "Date": "2nd March 22 Wed  2PM ",
+  "modeOfRecording": "",
+  "link": "https://ov-live-in.zoom.us/j/93674370041?pwd=bXptb0MyUG9YSHM3dlNYeXBUMjNPdz09",
+  "topicName": "Open Source Development",
+  "status": false,
+  "linkedin": "https://www.linkedin.com/in/nikhildevshatwar/",
+  "image": "/img/speakers/Nikhil-Devshatwar.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e7"
+  },
+  "speakerName": "Dr Rama Kumar",
+  "companyName": "Indian Oil",
+  "emailID": "",
+  "designation": "",
+  "Date": "",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "",
+  "status": false,
+  "image": "/img/speaker1.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e6"
+  },
+  "speakerName": "Dr Victor Fey",
+  "companyName": "Triz Master",
+  "emailID": "",
+  "designation": "",
+  "Date": "",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "TRIZ at Samsung",
+  "status": true,
+  "linkedin": "https://www.linkedin.com/in/victorfey/",
+  "image": "/img/speakers/Victor-Fey.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e3"
+  },
+  "speakerName": "Dr. R. Saravanan",
+  "companyName": "Anna University",
+  "emailID": "dirced@annauniv.edu",
+  "designation": "",
+  "Date": "2nd March - 11 AM",
+  "modeOfRecording": "",
+  "link": "https://ov-live-in.zoom.us/j/93539935936?pwd=RzZ1cktzOTdFakkwN3RVU0h1eVZhQT09",
+  "topicName": "Solar cooling technology",
+  "status": false,
+  "twitter": "https://twitter.com/drnsaravanan2",
+  "linkedin": "https://www.linkedin.com/in/saravanan-d-9b5645100",
+  "image": "/img/speakers/Dr-R-Saravanan.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7ea"
+  },
+  "speakerName": "Dr R. Pardeshi",
+  "companyName": "Fergusson College",
+  "emailID": "",
+  "designation": "",
+  "Date": "",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "",
+  "status": false,
+  "image": "/img/speaker1.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7eb"
+  },
+  "speakerName": "Dr Abhay Jere",
+  "companyName": "",
+  "emailID": "",
+  "designation": "",
+  "Date": "",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "",
+  "status": false,
+  "twitter": "https://twitter.com/abhayjere",
+  "facebook": "https://www.facebook.com/abhay.jere.7",
+  "linkedin": "https://www.linkedin.com/in/abhay-jere-84b73416/",
+  "image": "/img/speakers/Abhay-Jere.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e8"
+  },
+  "speakerName": "Dr Shaver",
+  "companyName": "",
+  "emailID": "",
+  "designation": "",
+  "Date": "",
+  "modeOfRecording": "",
+  "link": "",
+  "topicName": "",
+  "status": false,
+  "twitter": "https://twitter.com/G_Shaver_Purdue",
+  "linkedin": "https://www.linkedin.com/in/greg-shaver-7246a12/",
+  "image": "/img/speakers/Abhay-Jere.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621f86db66c8e8b55015e7e9"
+  },
+  "speakerName": "Dr Anita Gupta",
+  "companyName": "DST",
+  "emailID": "",
+  "designation": "",
+  "Date": "3rd March 4 PM",
+  "modeOfRecording": "Zoom",
+  "link": "https://ov-live-in.zoom.us/j/93658180878?pwd=RC8yK0N4cUtQdURzZmVmS3A4WlVCdz09",
+  "topicName": "",
+  "status": false,
+  "twitter": "https://twitter.com/anitadst16",
+  "linkedin": "https://www.linkedin.com/in/dr-anita-gupta-a04b609",
+  "image": "/img/speakers/Dr.-Anita-Gupta.png",
+  "__v": 0
+}]
