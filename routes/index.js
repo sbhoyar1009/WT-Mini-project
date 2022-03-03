@@ -73,11 +73,24 @@ const checkUser = async (req, res, next) => {
   }
 };
 
+// router.get("/temp", (req, res) => {
+//   let memeNo = Math.floor(Math.random() * 4 + 1);
+//   res.render("post-registration", {
+//     status: "success",
+//     alreadyRegistered: false,
+//     email: "gauravvr77@gmail.com",
+//     memeNo: memeNo,
+//   });
+// });
+
 router.get("/registration/successful", checkUser, (req, res) => {
+let memeNo = Math.floor((Math.random() * 4) + 1);
+  console.log(memeNo);
   res.render("post-registration", {
     status: "success",
     alreadyRegistered: false,
     email: req.user.email.toLowerCase(),
+    memeNo: Math.floor((Math.random() * 4) + 1),
   });
 });
 
@@ -382,9 +395,5 @@ router.post("/createspeaker", async (req, res) => {
 //   }
 //   res.send("success");
 // });
-
-router.get("*", function (req, res) {
-  res.render("notfound");
-});
 
 module.exports = router;

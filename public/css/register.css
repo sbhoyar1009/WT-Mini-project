@@ -197,9 +197,9 @@ input[type="password"] {
 .post-registration-page .countdown .card {
   /* font-family: "Work Sans", sans-serif; */
   font-family: "sinkin_sans600_semibold";
-  padding: 2rem;
+  padding: 0.5rem;
   max-width: 60%;
-  margin: 5rem auto;
+  margin: 3rem auto;
   display: flex;
   justify-content: center;
   font-weight: 600;
@@ -213,12 +213,16 @@ input[type="password"] {
   font-family: "sinkin_sans400_regular";
 }
 
-.card-body p::before {
+.card-body .card-text {
+  letter-spacing: 1px;
+}
+
+.card-body .card-text::before {
   content: "\275D";
   margin: 2px;
 }
 
-.card-body p::after {
+.card-body .card-text::after {
   content: "\275E";
   margin: 2px;
 }
@@ -232,6 +236,39 @@ input[type="password"] {
   height: 2rem;
   border-radius: 50%;
   margin: 1.5rem 1rem;
+}
+
+.meme-img {
+  width: 40%;
+  margin: auto;
+}
+
+.meme-img span {
+  display: none;
+  margin-top: -2rem;
+  margin-right: 1rem;
+  text-align: right;
+}
+
+/* .meme-img:hover::after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+} */
+
+.meme-img img {
+  width: 100%;
+  height: auto;
+}
+
+.meme-img .download-meme:hover span {
+  display: block;
+  margin-top: -2rem;
 }
 
 @keyframes scaleAnimation {
@@ -303,6 +340,15 @@ input[type="password"] {
   animation: 0.3s linear 0.9s both fadeIn;
 }
 
+.notfound {
+  margin-top: 5rem;
+  margin: auto;
+}
+.notfound img {
+  height: 50%;
+  width: 50%;
+}
+
 @media screen and (max-width: 720px) {
   .register-page .registration {
     display: block;
@@ -332,12 +378,8 @@ input[type="password"] {
   .social-share .social-icons img {
     margin: 1.5rem 0.5rem;
   }
-}
-.notfound{
-  margin-top: 5rem;
-}
-.notfound img{
-  height : 50%;
-  width: 50%;
 
+  .meme-img {
+    width: 60%;
+  }
 }
