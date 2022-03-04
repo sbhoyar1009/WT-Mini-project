@@ -19,6 +19,7 @@ send.registrationSuccessful = (toMail, name) => {
   let mailOptions = {
     from: "kpitsparklegrandfinale2022@kpit.com",
     to: toMail,
+	attachments: attachments,
     subject: "KPIT Sparkle 2022 Grand Finale Registration Successful",
     Headers: {
       "Content-Type": "text/html",
@@ -53,6 +54,11 @@ send.registrationSuccessful = (toMail, name) => {
         path: "https://sparklegrandfinale.kpit.com/img/email/footer-mail.png",
         cid: "footer",
       },
+	  {
+        filename: "Brochure.pdf",
+        path: "https://sparklegrandfinale.kpit.com/img/email/Brochure.pdf",
+        cid: "Brochure",
+      }
     ],
   };
 
