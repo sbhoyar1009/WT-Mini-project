@@ -23,12 +23,21 @@
         </div>
 
         <div class="col-md-8 col-lg-8">
-          <h2><%= speaker.speakerName %></h2>
-          <p>
-            <strong style="color: #8fdb00">Topic: </strong> <%= speaker.topicName %>
-          </p>
-          <h3><%= speaker.designation %></h3>
-          <p><%= speaker.Date %></p>
+          <h2 style="color: #757af7"><%= speaker.speakerName %></h2>
+          <% if (speaker.designation) { %>
+          <h3 style="color: #f7f7f7"><%= speaker.designation %></h3>
+          <% } %> <% if (speaker.topicName) { %>
+          <h4>
+            <strong style="color: #8fdb00">Topic: </strong> <%=
+            speaker.topicName %>
+          </h4>
+          <% } %> <% if(speaker.description) { %>
+          <h4><%= speaker.description %></h4>
+          <% } %> <% if(speaker.Date) { %>
+          <h4>
+            <strong style="color: #8fdb00">Date: </strong> <%= speaker.Date %>
+          </h4>
+          <% } %>
         </div>
       </div>
     </div>

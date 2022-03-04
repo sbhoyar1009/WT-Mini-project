@@ -385,5 +385,5 @@ input[type="email"] {
 
 /* magnific popup */
 .mfp-bg {
-  background: #8fdb00;
+  background: linear-gradient(90deg, #1d3a49 0.01%, #1b3745 89.97%, 0.5);
 }
