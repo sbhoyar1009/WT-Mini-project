@@ -154,9 +154,11 @@ $(window).load(function () {
     if ($(".navbar").offset().top > 50) {
       $(".navbar-fixed-top").addClass("top-nav-collapse");
       $(".n-link").addClass("n-link-b");
+      $("#nav-brand-logo").attr("src", "/img/logo.png");
     } else {
       $(".navbar-fixed-top").removeClass("top-nav-collapse");
       $(".n-link").removeClass("n-link-b");
+      $("#nav-brand-logo").attr("src", "/img/logo1.png");
     }
   });
 });

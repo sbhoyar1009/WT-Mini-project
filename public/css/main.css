@@ -173,7 +173,7 @@ h4 {
 
 #top {
   /* background: url(../img/top-bg.png) bottom center no-repeat; */
-   background: url(../img/register-bg.png) bottom center no-repeat;
+  background: url(../img/register-bg.png) bottom center no-repeat;
   width: 100%;
   max-height: auto;
   height: 600px;
@@ -705,7 +705,7 @@ h4 {
 
 .contact h2 {
   margin-bottom: 10px;
-  margin-top : 5rem;
+  margin-top: 5rem;
 }
 
 #contact p {
@@ -881,15 +881,34 @@ select {
   }
 }
 
-.footer{
+.footer {
   padding: 10px;
   text-align: center;
 }
 
+.footer_logo {
+  color: #757af7;
+  font-size: 2rem;
+}
 
-@media screen and (max-width:1000px){
-  #days .item{
+@media screen and (max-width: 1000px) {
+  #days .item {
     word-wrap: break-word;
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .speaker_name {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .footer h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer_logo {
+    color: #757af7;
+    font-size: 2rem;
+  }
 }
