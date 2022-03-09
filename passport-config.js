@@ -34,9 +34,9 @@ module.exports = function (passport) {
                 { 
 				  username : email.emails[0].value.toLowerCase(),
                   email: email.emails[0].value.toLowerCase(),
-                  username: email.emails[0].value.toLowerCase(),
                   fullName: email.displayName,
                   registeredUsing: "Google",
+				  
                 },
                 (err, createdUser) => {
                   if (err) {
@@ -46,6 +46,7 @@ module.exports = function (passport) {
                     const parameters = new URLSearchParams({
                       name: createdUser.fullName,
                       email: createdUser.email.toLowerCase(),
+					  
                     }).toString();
 
                     axios

@@ -19,7 +19,7 @@ send.registrationSuccessful = (toMail, name) => {
   let mailOptions = {
     from: "kpitsparklegrandfinale2022@kpit.com",
     to: toMail,
-	attachments: attachments,
+//	attachments: attachments,
     subject: "KPIT Sparkle 2022 Grand Finale Registration Successful",
     Headers: {
       "Content-Type": "text/html",
