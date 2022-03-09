@@ -64,6 +64,7 @@ app.use(authRoutes);
 app.get('*', function(req, res){
   res.render("notfound");
 });
+
 app.listen(process.env.PORT || 9000, function () {
   console.log("The Server is Listening!!!");
 });
