@@ -48,7 +48,8 @@ router.post("/register", async (req, res) => {
     res.render("post-registration", {
       status: "success",
       alreadyRegistered: true,
-      email : userExist.email
+      email : userExist.email,
+	   memeNo: Math.floor((Math.random() * 4) + 1),
     });
     // return done(null,userExist);
   } else {
@@ -100,7 +101,8 @@ router.post("/register", async (req, res) => {
                     return res.render("post-registration", {
                       status: "success",
                       alreadyRegistered: false,
-                      email : newUser.email
+                      email : newUser.email,
+					   memeNo: Math.floor((Math.random() * 4) + 1)
                     });
                   }
                 }

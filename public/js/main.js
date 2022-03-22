@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
   //COUNTDOWN TIMER
   var newYear = new Date();
   newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);
-  $("#countdown").countdown({ until: new Date(2022, 2, 22) }); // enter event day
+  $("#countdown").countdown({ until: new Date(2022, 2, 22,15) }); // enter event day
 
   $("#removeCountdown").toggle(
     function () {
@@ -154,9 +154,11 @@ $(window).load(function () {
     if ($(".navbar").offset().top > 50) {
       $(".navbar-fixed-top").addClass("top-nav-collapse");
       $(".n-link").addClass("n-link-b");
+      $("#nav-brand-logo").attr("src", "/img/logo.png");
     } else {
       $(".navbar-fixed-top").removeClass("top-nav-collapse");
       $(".n-link").removeClass("n-link-b");
+      $("#nav-brand-logo").attr("src", "/img/logo1.png");
     }
   });
 });

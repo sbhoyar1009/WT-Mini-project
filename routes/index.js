@@ -85,11 +85,12 @@ const checkUser = async (req, res, next) => {
 
 router.get("/registration/successful", checkUser, (req, res) => {
   let memeNo = Math.floor(Math.random() * 4 + 1);
+  console.log(memeNo);
   res.render("post-registration", {
     status: "success",
     alreadyRegistered: false,
     email: req.user.email.toLowerCase(),
-    memeNo: memeNo,
+    memeNo: Math.floor(Math.random() * 4 + 1),
   });
 });
 
@@ -106,6 +107,23 @@ router.get("/admin/dashboard", isAdmin, async (req, res) => {
 router.post("/createspeaker", async (req, res) => {
   // return console.log("hiii", req.body);
   let speakers = [
+    {
+      speakerName: "Rahul Uplap",
+      companyName: "KPIT Technologies Limited",
+      emailID: "rahul.uplap@kpit.com",
+      designation:
+        "Head - Education & Competency Development (ECoDe).",
+      topicName:
+        "",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      status: true,
+      linkedin:
+        "",
+      image: "/img/speaker1.png",
+      description:"Mr Rahul Uplap, Head - Education & Competency Development (ECoDe), is the rock-solid foundation of KPIT Sparkle. His zest to see new wonders evolve from an idea drives the whole team to work smarter and better."
+    },
     {
       speakerName: "Lalit Arora",
       companyName: "Tata Communications",
@@ -134,7 +152,9 @@ router.post("/createspeaker", async (req, res) => {
       link: "https://ov-live-in.zoom.us/j/9684334266?pwd=bnJQY0ZEQmdBNmJNV08wZk5jZUVUQT09",
       status: true,
       linkedin: "https://www.linkedin.com/in/chandrasekaran-pradeep-344b0635/",
-      image: "/img/speakers/Abhilash-Sk.png",
+      image: "/img/speakers/Chandrasekaran-Pradeep.png",
+      description:
+        "Mr Pradeep Chandrasekaran has over 20 years of rich experience in the Automotive Industry with 2 Six Sigma Black Belt Certifications. He has been a member of the Indian Society of Quality since 2019 and also a Management Committee Member in SAEINDIA Southern Section for 2020-2022.",
     },
     {
       speakerName: "Abhilash K",
@@ -148,6 +168,7 @@ router.post("/createspeaker", async (req, res) => {
       status: true,
       linkedin: "https://www.linkedin.com/in/abhilash-sk-83294218",
       image: "/img/speakers/Abhilash-Sk.png",
+      description:"Mr Abhilash leads his team to develop and design production-grade algorithms for vision-based applications. His expertise lies in ADAS, Surveillance Analytics System and building unified agnostic based computer vision framework."
     },
     {
       speakerName: "Santhana Raj",
@@ -189,7 +210,7 @@ router.post("/createspeaker", async (req, res) => {
       link: "https://ov-live-in.zoom.us/j/98636716412?pwd=em1HL05JOVF1Z2xzOVdtRTQxaDRtdz09",
       status: false,
       linkedin: "https://www.linkedin.com/in/shobhit-shrotriya-1162261/",
-      image: "/img/spekears/Shobhit-Shrotriya.png",
+      image: "/img/speakers/Shobhit-Shrotriya.png",
     },
     {
       speakerName: "Rakesh Mehta",
@@ -203,7 +224,7 @@ router.post("/createspeaker", async (req, res) => {
       link: "https://ov-live-in.zoom.us/j/98709701662?pwd=RHRUdElpWElERkhDeG9qN3FpRnF6dz09",
       status: true,
       linkedin: "https://www.linkedin.com/in/rakesh-mehta-b9a8b9b5/",
-      image: "/img/spekears/Rakesh-Mehta.png",
+      image: "/img/speakers/Rakesh-Mehta.png",
     },
     {
       speakerName: "Raghu Muttige",
@@ -269,6 +290,7 @@ router.post("/createspeaker", async (req, res) => {
       status: true,
       linkedin: "https://www.linkedin.com/in/gopinath-venkataramani-11aa7381",
       image: "/img/speakers/Subramanian-Venkatramani.png",
+      description:"With 50 years of rich design Experience in Electronic Products, Mr Venkatramani has designed some remarkable products such as Electric Train Converters & Inverters, Solar Inverters, Lithium-Ion Battery Management Systems, UPS, SMPS and so much more."
     },
     // {
     //   speakerName: "Himanshu Jain",
@@ -346,6 +368,8 @@ router.post("/createspeaker", async (req, res) => {
       twitter: "https://twitter.com/anitadst16",
       linkedin: "https://www.linkedin.com/in/dr-anita-gupta-a04b609",
       image: "/img/speakers/Dr.-Anita-Gupta.png",
+      description:
+        "As a renowned Scientist G at DST with over 20 years of experience, Dr Gupta has played a pioneering role in steering the horizontal and vertical growth of innovation, entrepreneurship and startups in the country. ",
     },
     {
       speakerName: "Dr Ravindrasingh Pardeshi",
