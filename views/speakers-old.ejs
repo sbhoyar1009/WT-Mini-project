@@ -1,0 +1,906 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+<style>
+  .row_head,
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row_head {
+    margin-bottom: 2rem !important;
+  }
+
+  .row_head h3 {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 480px) {
+    .col-xs-6 {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .row_head h3 {
+      width: 30%;
+    }
+  }
+</style>
+
+<section id="speakers">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-10 px-lg-5">
+        <h2 class="uppercase text-center">speakers</h2>
+        <h3 class="uppercase text-center">
+          Know how to take the right steps from the industry’s Best!
+        </h3>
+        <br />
+
+        <div id="k_speak" class="row">
+          <div class="row_head">
+            <h3
+              class="text-center"
+              style="
+                color: #f7f7f7 !important;
+                padding: 1rem 2rem;
+                background: linear-gradient(
+                  90deg,
+                  rgba(143, 219, 0, 1) 0%,
+                  rgba(63, 97, 0, 1) 80%,
+                  rgba(59, 90, 0, 1) 100%,
+                  rgba(0, 0, 0, 1) 100%
+                );
+                font-weight: 700;
+              "
+            >
+              Keynote Speakers
+            </h3>
+          </div>
+          <!-- speaker 1 -->
+        </div>
+        <div id="t_speak" class="row">
+          <div class="row_head">
+            <h3
+              class="text-center"
+              style="
+                color: #f7f7f7 !important;
+                padding: 1rem 2rem;
+                background: linear-gradient(
+                  90deg,
+                  rgba(143, 219, 0, 1) 0%,
+                  rgba(63, 97, 0, 1) 80%,
+                  rgba(59, 90, 0, 1) 100%,
+                  rgba(0, 0, 0, 1) 100%
+                );
+                font-weight: 700;
+              "
+            >
+              Tech Talks
+            </h3>
+          </div>
+          <!-- speaker 1 -->
+        </div>
+        <div id="p_speak_m" class="row">
+          <div class="row_head">
+            <h3
+              class="text-center"
+              style="
+                color: #f7f7f7 !important;
+                padding: 1rem 2rem;
+                background: linear-gradient(
+                  90deg,
+                  rgba(143, 219, 0, 1) 0%,
+                  rgba(63, 97, 0, 1) 80%,
+                  rgba(59, 90, 0, 1) 100%,
+                  rgba(0, 0, 0, 1) 100%
+                );
+                font-weight: 700;
+              "
+            >
+              Panel Discussion Moderator
+            </h3>
+          </div>
+          <!-- speaker 1 -->
+        </div>
+        <div id="p_speak" class="row">
+          <div class="row_head">
+            <h3
+              class="text-center"
+              style="
+                color: #f7f7f7 !important;
+                padding: 1rem 2rem;
+                background: linear-gradient(
+                  90deg,
+                  rgba(143, 219, 0, 1) 0%,
+                  rgba(63, 97, 0, 1) 80%,
+                  rgba(59, 90, 0, 1) 100%,
+                  rgba(0, 0, 0, 1) 100%
+                );
+                font-weight: 700;
+              "
+            >
+              Panel Discussion Members
+            </h3>
+          </div>
+          <!-- speaker 1 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let tSpeakers = [
+    {
+      _id: {
+        $oid: "622613a4d1656fc9b0ce45a5",
+      },
+      speakerName: "Rahul Uplap",
+      companyName: "KPIT Technologies Limited",
+      emailID: "rahul.uplap@kpit.com",
+      tag: "t_t",
+      designation: "Head - Education & Competency Development (ECoDe).",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Keynote Address",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Rahul-Uplap.png",
+      description:
+        "Mr Rahul Uplap, Head - Education & Competency Development (ECoDe), is the rock-solid foundation of KPIT Sparkle. His zest to see new wonders evolve from an idea drives the whole team to work smarter and better.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261469d1656fc9b0ce45a6",
+      },
+      speakerName: "Dr Anita Gupta",
+      tag: "k_s",
+      companyName: "DST",
+      emailID: "",
+      designation:
+        "Scientist ‘G’/Advisor & Head\n(NSTEDB) / Innovation and\nEntrepreneurship and\nTechnology Mission Division",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/93658180878?pwd=RC8yK0N4cUtQdURzZmVmS3A4WlVCdz09",
+      topicName: "",
+      status: false,
+      twitter: "https://twitter.com/anitadst16",
+      linkedin: "https://www.linkedin.com/in/dr-anita-gupta-a04b609",
+      image: "/img/speakers/Dr.-Anita-Gupta.png",
+      description:
+        "As a renowned Scientist G at DST with over 20 years of experience, Dr Gupta has played a pioneering role in steering the horizontal and vertical growth of innovation, entrepreneurship and startups in the country. ",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261482d1656fc9b0ce45a7",
+      },
+      speakerName: "Dr Victor Fey",
+      companyName: "Triz Master",
+      tag: "t_t",
+      emailID: "",
+      designation:
+        "Chairman, TRIZ Research and Development Council at International TRIZ Association",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "TRIZ at Samsung",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/victorfey/",
+      image: "/img/speakers/Victor-Fey.png",
+      description:
+        "Mr Victor Fey has collected more than 2 decades of consulting experience serving the\nGlobal 1000. From teaching, coaching and consulting to facilitating and leading\ncross-functional teams in delivering critical breakthrough solutions, there’s no hat he hasn’t\ndonned.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261496d1656fc9b0ce45a8",
+      },
+      speakerName: "P. Chandrashekaran",
+      companyName: "Ola Electric",
+      tag: "t_t",
+      emailID: "pradeep.c1@olaelectric.com",
+      designation:
+        "Associate Director - Vehicle Engineering , OLA Electric Technologies Pvt Ltd.",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/9684334266?pwd=bnJQY0ZEQmdBNmJNV08wZk5jZUVUQT09",
+      topicName: "Fuel Cell Solutions for Transportation - Future Mobility\n",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/chandrasekaran-pradeep-344b0635/",
+      image: "/img/speakers/Chandrasekaran-Pradeep.png",
+      description:
+        "Mr Pradeep Chandrasekaran has over 20 years of rich experience in the Automotive Industry with 2 Six Sigma Black Belt Certifications. He has been a member of the Indian Society of Quality since 2019 and also a Management Committee Member in SAEINDIA Southern Section for 2020-2022.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614aad1656fc9b0ce45a9",
+      },
+      speakerName: "Abhilash K",
+      companyName: "Pathpartner",
+      tag: "t_t",
+      emailID: "abhilash.sk@pathpartnertech.com",
+      designation: "Technical Lead PathPartner Technology",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
+      topicName: "AI based Pedestrian Analytics for Autonomous Vehicles",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/abhilash-sk-83294218",
+      image: "/img/speakers/Abhilash-Sk.png",
+      description:
+        "Mr Abhilash leads his team to develop and design production-grade algorithms for vision-based applications. His expertise lies in ADAS, Surveillance Analytics System and building unified agnostic based computer vision framework.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614b5d1656fc9b0ce45aa",
+      },
+      speakerName: "Mr. S. Venkatramani",
+      companyName: "Ex Siemens GM",
+      tag: "t_t",
+      emailID: "s.venkatramani47@gmail.com",
+      designation: "Retired Siemens Head of R&D - Electronics.",
+      Date: "",
+      modeOfRecording: "",
+      link: "https://ov-live-in.zoom.us/j/96173539731?pwd=YnBORll1RVppSE5YR0p4emRNUndVQT09",
+      topicName: "Evolutions of Solid State devices from vaccum tunes to IGBT",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/gopinath-venkataramani-11aa7381",
+      image: "/img/speakers/Subramanian-Venkatramani.png",
+      description:
+        "With 50 years of rich design Experience in Electronic Products, Mr Venkatramani has designed some remarkable products such as Electric Train Converters & Inverters, Solar Inverters, Lithium-Ion Battery Management Systems, UPS, SMPS and so much more.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614c3d1656fc9b0ce45ab",
+      },
+      speakerName: "Jash Shah",
+      companyName: "Get-A-Whey",
+      tag: "t_t",
+      emailID: "",
+      designation: "Co-Founder-Get-A-Whey",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "",
+      status: true,
+      image: "/img/speakers/Jash-Shah.png",
+      description:
+        "Mr Jash Shah proposed India’s first healthy ice-cream brand, power packed with 12 gramsof protein and only 7 grams of fat per 100 grams of serving at Shark Tank India. His project Get-A-Whey bagged funding of a crore for 15 per cent equity.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614d2d1656fc9b0ce45ac",
+      },
+      speakerName: "Prof. Unnat P Pandit",
+      tag: "k_s",
+      companyName: "Jawaharlal Nehru University (JNU)",
+      emailID: "",
+      designation: "IP Innovation & Entrepreneurship @JNU",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "",
+      status: true,
+      image: "/img/speakers/Dr-Unnat-Pandit.png",
+      description:
+        "Dr Unnat P Pandit deals with techno-commercial activities, protecting intellectual property (IP), Innovation, Incubation & Entrepreneurship Management and has served in various product development fields over the years.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614ddd1656fc9b0ce45ad",
+      },
+      speakerName: "Shobhit Shrotriya",
+      companyName: "Accenture",
+      tag: "t_t",
+      emailID: "shobhit.shrotriya@accenture.com",
+      designation:
+        "Managing Director – Global Life Sciences R&D Operations, Accenture Life Sciences R&D Operations",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/98636716412?pwd=em1HL05JOVF1Z2xzOVdtRTQxaDRtdz09",
+      topicName: "The Journey to Intelligent Innovation\n",
+      status: false,
+      linkedin: "https://www.linkedin.com/in/shobhit-shrotriya-1162261/",
+      image: "/img/speakers/Shobhit-Shrotriya.png",
+      description:
+        "With 21+ years of experience, Mr Shrotriya is a Subject Matter Expert who contributes to the\nsolution development, process re-engineering, and implementation of life sciences\noutsourcing service delivery",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614fed1656fc9b0ce45af",
+      },
+      speakerName: "Mr.Rakesh Mehta",
+      companyName: "",
+      emailID: "rakesh.mehta57@gmail.com",
+      tag: "t_t",
+      designation:
+        "Former Director\n@Mechatronics Test\nEquipment and Bit Mapper\nIntegration Technologies",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/98709701662?pwd=RHRUdElpWElERkhDeG9qN3FpRnF6dz09",
+      topicName: "Semiconductor Design Opportunities in India\n",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/rakesh-mehta-b9a8b9b5/",
+      image: "/img/speakers/Rakesh-Mehta.png",
+      description:
+        "A serial entrepreneur, Indian defence and space systems design expert, a pioneer of\nnationwide VLSI design curriculum, and an alumni of IIT-B and IIT-M, Mr Mehta specialises\nin providing technological solutions to complex, unstructured problems!",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622614eed1656fc9b0ce45ae",
+      },
+      speakerName: "Mr. Saravana Ramasamy",
+      companyName: "Anna University",
+      emailID: "dirced@annauniv.edu",
+      tag: "t_t",
+      designation:
+        "Director, Entrepreneurship Development Anna University, Chennai",
+      Date: "",
+      modeOfRecording: "",
+      link: "https://ov-live-in.zoom.us/j/93539935936?pwd=RzZ1cktzOTdFakkwN3RVU0h1eVZhQT09",
+      topicName: "Solar cooling technology",
+      status: false,
+      twitter: "https://twitter.com/drnsaravanan2",
+      linkedin: "https://www.linkedin.com/in/saravanan-d-9b5645100",
+      image: "/img/speakers/Dr-R-Saravanan.png",
+      description:
+        "Professor Sravanan is a wellspring of knowledge, with over 25 years of experience in the\nfield of Energy Conversion in buildings, solar heating, cooling systems and combined power\n& cooling systems.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261518d1656fc9b0ce45b0",
+      },
+      speakerName: "Mr. Jonathan Dutton",
+      tag: "t_t",
+      companyName: "Sustanability at Dassault Systemes",
+      emailID: "",
+      designation: "Marketing Director,Sustanability at Dassault Systemes",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Talk on Sustainable Mobilty",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Jonathan-Dutton.png",
+      __v: 0,
+      description:
+        "Jonathan is responsible for connecting & engaging with Industry to help solve today's challenges of decarbonisation, circular economy, business resilience, and more thanks to virtual twin technologies.\nHe joined Dassault Systems in 1999 coming from a number of companies designing & manufacturing powertains and chasis components for the Automotive Industry\nSpecialitiies: Enterprise sotware B2B marketing, Future thinking, community animation, & engineering foundation.",
+    },
+    {
+      _id: {
+        $oid: "6226152bd1656fc9b0ce45b1",
+      },
+      speakerName: "Mili Kapadia",
+      companyName: "ESTREE Iron Services",
+      tag: "t_t",
+      emailID: "",
+      designation: "Founder, ESTREE Iron Services",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Do Women make better entrepreneurs?",
+      status: true,
+      linkedin:
+        "https://www.linkedin.com/in/mili-kapadia-287377168/?originalSubdomain=in",
+      image: "/img/speakers/Mili-Kapadia.png",
+      __v: 0,
+      description:
+        "Ms Kapadia’s venture Eस्त्री is primarily a steam iron service dedicated to improving the wellness of clothes with a greater goal of achieving women empowerment in the process.",
+    },
+    {
+      _id: {
+        $oid: "62261538d1656fc9b0ce45b2",
+      },
+      speakerName: "Saurabh Mangrulkar",
+      companyName: "EventBeep",
+      tag: "t_t",
+      emailID: "",
+      designation: "Founder at EventBeep",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Entrepreneurship : is it everyone's cup of tea",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/saurabh-mangrulkar/",
+      image: "/img/speakers/Saurabh-Mangrulkar.png",
+      __v: 0,
+      description:
+        "EventBeep is an online events center which provides all the students event planning checklists. It is the student event coordinator for college students from all over the world. It's designed for all the students to participate in college events and make their college life eventful. \n",
+      facebook: "https://www.facebook.com/yosaurabh9",
+    },
+    {
+      _id: {
+        $oid: "62261546d1656fc9b0ce45b3",
+      },
+      speakerName: "Lalit Arora",
+      companyName: "Tata Communications",
+      tag: "t_t",
+      emailID: "Lalit.Arora1@tatacommunications.com",
+      designation:
+        "India Head – Client Relationships, Connected Automotive Solutions\nTata Communications ",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/98919984119?pwd=QUJ1QnkxQ0dTYW5BWkpuYldGU3YzZz09",
+      topicName:
+        "Data, Platforms and Connectivity - Aligning Mobility with the needs of Connected Vehcile Programs\n",
+      status: true,
+      linkedin:
+        "https://www.linkedin.com/in/ACoAAAlocgYBm1zJYqV3HebX-9eTOKbJZn5BDuA/",
+      image: "/img/speakers/Lalit-Arora.png",
+      description: "",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261556d1656fc9b0ce45b4",
+      },
+      speakerName: "Raghu Muttige",
+      companyName: "Dana",
+      tag: "t_t",
+      emailID: "Raghu.Muttige@dana.com",
+      designation: "Managing Director - Dana India Technical Center (DITC)",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/95346740413?pwd=VnhFR20yd3dUcXR0cmRRNkpGZGtsQT09",
+      topicName: "Clock Speed in Mobility Industry",
+      status: true,
+      linkedin: "https://www.linkedin.com/in/raghu-muttige-b1886219/",
+      image: "/img/speakers/Raghu-Muttige.png",
+      description: "",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "6226156fd1656fc9b0ce45b5",
+      },
+      speakerName: "Nakul H. Navarange",
+      tag: "t_t",
+      companyName: "Qualcomm Technologies, Inc.",
+      emailID: "nakuln@qti.qualcomm.com",
+      designation:
+        "Staff Systems Engineer, 5G Networks, Qualcomm Technologies, Inc",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "5G Systems Engineer at Qualcomm Technologies",
+      status: false,
+      linkedin: "https://www.linkedin.com/in/nakulnavarange/",
+      image: "/img/speakers/Nakul-Navarange.png",
+      description:
+        "Nakul Navarange is a 5G Systems Engineer at Qualcomm Technologies in the United States. He has a decade of experience in the wireless industry, and his work has been showcased at multiple Mobile World Congress events around the world. Nakul holds a Master’s degree in Electrical Engineering and is a former recipient of Government of India’s National Talent Search Scholarship.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261595d1656fc9b0ce45b6",
+      },
+      speakerName: "Santhana Raj",
+      tag: "t_t",
+      companyName: "Pathpartner",
+      emailID: "santhana.raj@pathpartnertech.com",
+      designation: "Technical Architect PathPartner Technology",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/94594921175?pwd=a1JIdGVxU2hrSEl2b2xvQmZha3ZPQT09",
+      topicName:
+        "Automotive Radar Technology assisting in next level of Autonomous Driving\n\n",
+      status: true,
+      facebook: "https://www.facebook.com/santhana.raj.35",
+      image: "/img/speakers/Santhana-Raj.png",
+      description: "",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622615a5d1656fc9b0ce45b7",
+      },
+      speakerName: "Nikhil Devshatwar",
+      tag: "t_t",
+      companyName: "Texas Instruments",
+      emailID: "nikhildevshatwar@gmail.com",
+      designation: "Software Architect at Texas Instruments",
+      Date: "",
+      modeOfRecording: "",
+      link: "https://ov-live-in.zoom.us/j/93674370041?pwd=bXptb0MyUG9YSHM3dlNYeXBUMjNPdz09",
+      topicName: "Open Source Development",
+      status: false,
+      linkedin: "https://www.linkedin.com/in/nikhildevshatwar/",
+      image: "/img/speakers/Nikhil-Devshatwar.png",
+      description:
+        "Nikhil Devshatwar is working in Texas Instruments Bangalore as a software architect.\nHe has worked on Linux kernel camera drivers, virtualization technologies and other embedded automotive software.\nNikhil has 3 patents granted on his name for his innovative work on digital instrument clusters.\nOver the last 9 years, he has been working and contributing in the open source software community.\nHis hobbies include learning about origami, developing casual games and playing chess.\n",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622615b7d1656fc9b0ce45b8",
+      },
+      speakerName: "Omkar Panse",
+      tag: "t_t",
+      companyName: "KPIT Technologies",
+      emailID: "dirced@annauniv.edu | omkar.panse@kpit.com",
+      designation: "Vice President and Head-Digital Connected Solutions",
+      Date: "",
+      modeOfRecording: "Zoom",
+      link: "https://ov-live-in.zoom.us/j/92192459936?pwd=a0J2TWRwU3duaG5GaGZLbWNUdFVqQT09",
+      topicName: "",
+      status: false,
+      facebook: "https://www.facebook.com/omkar.panse",
+      linkedin: "https://www.linkedin.com/in/omkar-panse/",
+      image: "/img/speakers/Omkar-Panse.png",
+      description:
+        "Omkar has a wide industry experience of more than 25 years across domains such as automotive embedded software, new-age mobility, IoT, and digital technologies. As a passionate technologist, Omkar has a proven track record in grasping technology trends and conceptualizing new products and solutions as well as building winning teams.\nA Mechanical Engineer by education, Omkar carries deep experience in architecting complex systems, especially in the areas of Software-Defined Vehicles, automotive infotainment, connectivity, embedded systems, and highly scalable connected services platforms.\nHe has been instrumental in formulating and executing strategies to deliver products and solutions to capture future opportunities. Omkar has played a crucial role in nurturing two technology products which are going into more than 5 million cars starting.\nIn his present role, Omkar is responsible for architecting platforms and solutions for connected, autonomous, and electric software-defined vehicles of the future.",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "622615c4d1656fc9b0ce45b9",
+      },
+      speakerName: "Amisha Vora",
+      tag: "t_t",
+      companyName: "Prabhudas Lilladher",
+      emailID: "",
+      designation: "Owner and Joint Managing Director at Prabhudas Lilladher",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName:
+        "How strong is you parachute before the entrepreneurship plunge",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Amisha-Vora.png",
+      __v: 0,
+      description: "",
+    },
+    {
+      _id: {
+        $oid: "622615d7d1656fc9b0ce45ba",
+      },
+      speakerName: "Shashank Moddhia",
+      tag: "t_t",
+      companyName: "The Renal Projects",
+      emailID: "",
+      designation: "Founder, The Renal Project",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Entrepreneurship : is it everyone's cup of tea",
+      status: true,
+      linkedin:
+        "https://www.linkedin.com/in/shashank-moddhia-cmq-oe-460b483/?originalSubdomain=in",
+      image: "/img/speakers/Shashank-Moddhia.png",
+      __v: 0,
+      description:
+        "THE RENAL PROJECT is one of the biggest dialysis centers in India.Mr. Moddhia will share views on his Journey to SharkTank and life beyond it.",
+    },
+    {
+      _id: {
+        $oid: "622615e7d1656fc9b0ce45bb",
+      },
+      speakerName: "Dr. Satish Ogale",
+      tag: "t_t",
+      companyName: "Sustainable Energy (RISE),TCG-CREST, Kolkata",
+      emailID: "",
+      designation:
+        "Director, Research Institute for Sustainable Energy (RISE),TCG-CREST, Kolkata",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Welcome Address",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Satish-Ogale.png",
+      __v: 0,
+      description:
+        "Prof. Satishchandra Ogale obtained his PhD from University of Pune in 1980 where he served as faculty for many years. Since 1982 he has been visiting faculty/scientist at University of Southern California, University of Maryland, College Park, Bell Communications Research, USA, FOM Institute, Netherlands, University of Lyon and Rouen, France etc on a number of occasions. He has several national and international honours to his credit. He served as Scientist-G at CSIR-NCL before joining IISER Pune in 2015.",
+    },
+    {
+      _id: {
+        $oid: "622615f7d1656fc9b0ce45bc",
+      },
+      speakerName: "Dr. R. Pardeshi",
+      tag: "k_s",
+      companyName: "Fergusson College",
+      emailID: "",
+      designation: "",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "",
+      status: false,
+      image: "/img/speakers/Dr.-Ravindrasing-Pardeshi.png",
+      description:
+        "•        36 years of teaching at Science graduation and post-graduation.•        M. Sc. Environmental Science, University of Pune, Pune, India. •        37 years of research experience during Doctoral and Research Projects.\n•        Research Collaboration under Erasmus Plus for Higher Education Student and Staff Mobility (2017-2019) with Jagiellonian University in Krakow, (JU), Poland. Areas of interest: Petrology, Groundwater and Palaeontology.\n•        Research Guide in Geology for M. Phil.\nmore than 20 papers published, author of 1.        Text Book of Geology, for B.Sc. Course (2001 / 2007) Revised Edition (2014).",
+      __v: 0,
+    },
+    {
+      _id: {
+        $oid: "62261612d1656fc9b0ce45bd",
+      },
+      speakerName: "Dr. Deepesh Gujrathi",
+      tag: "pd_m",
+      companyName: "KPIT Technologies",
+      emailID: "",
+      designation:
+        "Senior Solution Architect (Hydrogen Fuel Cell Vehicles) at KPIT Technologies",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Moderator",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Deepesh-Gujrathi.png",
+      __v: 0,
+      description: "",
+    },
+    {
+      _id: {
+        $oid: "62261625d1656fc9b0ce45be",
+      },
+      speakerName: "Dr. Ashish Lele",
+      tag: "pd",
+      companyName: "National Chemical Laboratory (NCL)",
+      emailID: "",
+      designation: "India Director of CSIR National Chemical Laboratory (NCL)",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Panel Discussion",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Ashish-Lele.png",
+      __v: 0,
+      description: "",
+    },
+    {
+      _id: {
+        $oid: "62261636d1656fc9b0ce45bf",
+      },
+      speakerName: "Dr. Milind Rane",
+      tag: "pd",
+      companyName: "IIT Bombay",
+      emailID: "",
+      designation: "Professor Heat Pump Laboratory at IIT Bombay",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Panel Discussion",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Milind-Rane.png",
+      __v: 0,
+      description:
+        "PhD, University of Maryland at College Park, Mechanical Engineering Department, 1991,\nMS, Southern Illinois University Carbondale, Mechanical Engineering and Energy Processes Department, 1989,\nBE, Maharaja Sayajirao University Baroda, Mechanical Engineering Department, 1986",
+    },
+    {
+      _id: {
+        $oid: "62261648d1656fc9b0ce45c0",
+      },
+      speakerName: "Dr. Rajesh Biniwale",
+      tag: "pd",
+      companyName: "Sr.Principal scientist",
+      emailID: "",
+      designation: "Sr.Principal scientist",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Panel Discussion",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Rajesh-Biniwale.png",
+      __v: 0,
+      description: "",
+    },
+    {
+      _id: {
+        $oid: "62261657d1656fc9b0ce45c1",
+      },
+      speakerName: "Mr. Sriram Ramakrishnan",
+      tag: "pd",
+      companyName: "Reliance New Energy",
+      emailID: "",
+      designation: "Sr.Principal scientist",
+      Date: "",
+      modeOfRecording: "",
+      link: "",
+      topicName: "Panel Discussion",
+      status: true,
+      linkedin: "",
+      image: "/img/speakers/Sriram-Ramakrishnan.png",
+      __v: 0,
+      description:
+        "Builder of Businesses, Leaders & Teams over the last 26 years globally. Proven track record of growing businesses through M&A and organically by innovating across the power electronics value chain including R&D, Manufacturing, Marketing, Sales & Service. Built the largest Indian UPS Company - Consul Neowatt before acquisition by Fuji Electric (leading Japanese Power Electronics MNC) in 2019. Now with Reliance New Energy Limited as Business Head for Energy Systems on a mission to build a world class team and business in the field of Energy Systems for Solar, Energy Storage, Green Hydrogen, EV and Fuel Cells in India and Globally",
+    },
+  ];
+
+  console.log(tSpeakers.length);
+  tSpeakers.forEach((s) => {
+    if (s.tag === "k_s") {
+      let tempNode = document.createElement("div");
+      tempNode.classList.add("speaker");
+      tempNode.classList.add("col-xs-6");
+      tempNode.classList.add("col-sm-4");
+      tempNode.classList.add("col-md-3");
+      tempNode.classList.add("col-lg-3");
+      tempNode.innerHTML = `
+            <figure>
+              <img
+                class="img-responsive"
+                src="${s.image}"
+                alt="${s.speakerName}"
+              />
+              <!-- <img class="img-responsive" src="/img/speaker3.png" alt="${s.speakerName}" /> -->
+              <figcaption>
+                <h4>${s.speakerName}</h4>
+                <p>${s.designation}</p>
+                <a
+                  class="speaker-detail"
+                  href="/speaker-details/${s.id}"
+                  ><i class="fa fa-2x fa-external-link"></i
+                ></a>
+                <div class="social">
+                  <a href="${s.facebook}"
+                    ><i class="fa fa-2x fa-facebook-square"></i
+                  ></a>
+                  <a href="${s.twitter}"
+                    ><i class="fa fa-2x fa-twitter-square"></i
+                  ></a>
+                  <a href="${s.linkedin}"
+                    ><i class="fa fa-2x fa-linkedin-square"></i
+                  ></a>
+                </div>
+              </figcaption>
+            </figure>
+
+            <h4 class="speaker_name">${s.speakerName}</h4>
+          `;
+
+      document.getElementById("k_speak").appendChild(tempNode);
+    } else if (s.tag === "t_t") {
+      let tempNode = document.createElement("div");
+      tempNode.classList.add("speaker");
+      tempNode.classList.add("col-xs-6");
+      tempNode.classList.add("col-sm-4");
+      tempNode.classList.add("col-md-3");
+      tempNode.classList.add("col-lg-3");
+      tempNode.innerHTML = `
+            <figure>
+              <img
+                class="img-responsive"
+                src="${s.image}"
+                alt="${s.speakerName}"
+              />
+              <!-- <img class="img-responsive" src="/img/speaker3.png" alt="${s.speakerName}" /> -->
+              <figcaption>
+                <h4>${s.speakerName}</h4>
+                <p>${s.designation}</p>
+                <a
+                  class="speaker-detail"
+                  href="/speaker-details/${s.id}"
+                  ><i class="fa fa-2x fa-external-link"></i
+                ></a>
+                <div class="social">
+                  <a href="${s.facebook}"
+                    ><i class="fa fa-2x fa-facebook-square"></i
+                  ></a>
+                  <a href="${s.twitter}"
+                    ><i class="fa fa-2x fa-twitter-square"></i
+                  ></a>
+                  <a href="${s.linkedin}"
+                    ><i class="fa fa-2x fa-linkedin-square"></i
+                  ></a>
+                </div>
+              </figcaption>
+            </figure>
+
+            <h4 class="speaker_name">${s.speakerName}</h4>
+          `;
+
+      document.getElementById("t_speak").appendChild(tempNode);
+    } else if (s.tag === "pd_m") {
+      let tempNode = document.createElement("div");
+      tempNode.classList.add("speaker");
+      tempNode.classList.add("col-xs-6");
+      tempNode.classList.add("col-sm-4");
+      tempNode.classList.add("col-md-3");
+      tempNode.classList.add("col-lg-3");
+      tempNode.innerHTML = `
+            <figure>
+              <img
+                class="img-responsive"
+                src="${s.image}"
+                alt="${s.speakerName}"
+              />
+              <!-- <img class="img-responsive" src="/img/speaker3.png" alt="${s.speakerName}" /> -->
+              <figcaption>
+                <h4>${s.speakerName}</h4>
+                <p>${s.designation}</p>
+                <a
+                  class="speaker-detail"
+                  href="/speaker-details/${s.id}"
+                  ><i class="fa fa-2x fa-external-link"></i
+                ></a>
+                <div class="social">
+                  <a href="${s.facebook}"
+                    ><i class="fa fa-2x fa-facebook-square"></i
+                  ></a>
+                  <a href="${s.twitter}"
+                    ><i class="fa fa-2x fa-twitter-square"></i
+                  ></a>
+                  <a href="${s.linkedin}"
+                    ><i class="fa fa-2x fa-linkedin-square"></i
+                  ></a>
+                </div>
+              </figcaption>
+            </figure>
+
+            <h4 class="speaker_name">${s.speakerName}</h4>
+          `;
+
+      document.getElementById("p_speak_m").appendChild(tempNode);
+    } else if (s.tag === "pd") {
+      let tempNode = document.createElement("div");
+      tempNode.classList.add("speaker");
+      tempNode.classList.add("col-xs-6");
+      tempNode.classList.add("col-sm-4");
+      tempNode.classList.add("col-md-3");
+      tempNode.classList.add("col-lg-3");
+      tempNode.innerHTML = `
+            <figure>
+              <img
+                class="img-responsive"
+                src="${s.image}"
+                alt="${s.speakerName}"
+              />
+              <!-- <img class="img-responsive" src="/img/speaker3.png" alt="${s.speakerName}" /> -->
+              <figcaption>
+                <h4>${s.speakerName}</h4>
+                <p>${s.designation}</p>
+                <a
+                  class="speaker-detail"
+                  href="/speaker-details/${s.id}"
+                  ><i class="fa fa-2x fa-external-link"></i
+                ></a>
+                <div class="social">
+                  <a href="${s.facebook}"
+                    ><i class="fa fa-2x fa-facebook-square"></i
+                  ></a>
+                  <a href="${s.twitter}"
+                    ><i class="fa fa-2x fa-twitter-square"></i
+                  ></a>
+                  <a href="${s.linkedin}"
+                    ><i class="fa fa-2x fa-linkedin-square"></i
+                  ></a>
+                </div>
+              </figcaption>
+            </figure>
+
+            <h4 class="speaker_name">${s.speakerName}</h4>
+          `;
+
+      document.getElementById("p_speak").appendChild(tempNode);
+    }
+  });
+</script>

@@ -291,3 +291,35 @@
   "image": "/img/speakers/Dr.-Anita-Gupta.png",
   "__v": 0
 }]
+
+
+
+
+
+
+{
+"totalScore":0,
+"username":"hitesha",
+"result":
+[
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b2"},
+  "projectID":"1706","assignmentID":"6224c71ead21b1ea134db7b0","assignmentTitle":"MBD-MassSpringSystem0003"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b3"},
+  "projectID":"1709","assignmentID":"6224c7dcad21b1ea134db80a","assignmentTitle":"MBD-SpringMassDamper0008"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b4"},
+  "projectID":"1712","assignmentID":"6224c79cad21b1ea134db7e4","assignmentTitle":"MBD-MechSMDSystem0005"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b5"},
+  "projectID":"1710","assignmentID":"6224c710ad21b1ea134db7a8","assignmentTitle":"MBD-DynVibAbsorber0002"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b6"},
+  "projectID":"1711","assignmentID":"6224c7c4ad21b1ea134db7fe","assignmentTitle":"MBD-SpringLoadedPend0007"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b7"},
+  "projectID":"1715","assignmentID":"6224c787ad21b1ea134db7d8","assignmentTitle":"MBD-MechanicalAcc0004"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b8"},
+  "projectID":"1713","assignmentID":"6224c810ad21b1ea134db82c","assignmentTitle":"MBD-SuspMassSpring0009"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59b9"},
+  "projectID":"1714","assignmentID":"6224c6cbad21b1ea134db796","assignmentTitle":"MBD-ClockPendulumSys0001"},
+  {"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59ba"},"projectID":"1716","assignmentID":"6224c7b1ad21b1ea134db7f0","assignmentTitle":"MBD-PendOscillator0006"},{"attemptNumber":0,"bestScore":0,"recentScore":0,"submitted":false,"_id":{"$oid":"6228b3f7bad4eee287aa59bb"},"projectID":"1719","assignmentID":"62260e13684c04dba1dabaf1","assignmentTitle":"MBD-WindingOscl0010"}],
+  "testID":{"$oid":"6228b3d9bad4eee287aa56f8"},
+  "finYear":"2021-2022",
+  "groupID":"10081"
+}

@@ -15,6 +15,6 @@ var speakerSchema = new mongoose.Schema({
   linkedin: { type: String },
   image: { type: String },
   description: { type: String, default: "" },
+  tag: { type: String }
 });
-
 module.exports = mongoose.model("Speaker", speakerSchema);
